@@ -14,3 +14,4 @@ Execute `scripts/check-missing.py` in the root directory to update `arch-with-au
  * Repology is slow at this scale. Consider matching files contained in the packages
  * As Repology operates on projects instead of packages, way too many packages may be emitted (e.g. Qt)
  * Create separate lists for official repositories and AUR
+ * Merge information from previous rosdep list to keep manual changes
