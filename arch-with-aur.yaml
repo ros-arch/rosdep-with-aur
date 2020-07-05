@@ -1,0 +1,2751 @@
+acpi:
+  arch:
+  - acpi
+acpitool:
+  arch:
+  - acpitool
+adafruit-ads1x15-pip:
+  arch: []
+adafruit-gpio-pip:
+  arch: []
+adafruit-mcp3008-pip:
+  arch: []
+adafruit-pca9685-pip:
+  arch: []
+antlr:
+  arch:
+  - antlr2
+apache2:
+  arch:
+  - apache
+apache2-mpm-prefork:
+  arch: []
+apparmor:
+  arch:
+  - apparmor
+arista:
+  arch:
+  - arista
+autograd-pip:
+  arch: []
+autolab-core-pip:
+  arch: []
+autolab-perception-pip:
+  arch: []
+autolab-visualization-pip:
+  arch: []
+awsiotpythonsdk-pip:
+  arch: []
+azure-iothub-device-client-pip:
+  arch: []
+babeltrace:
+  arch:
+  - babeltrace
+benchmark:
+  arch:
+  - benchmark
+bluez-hcidump:
+  arch:
+  - bluez-hcidump
+can-utils:
+  arch:
+  - can-utils
+canopen-pip:
+  arch: []
+carla-pip:
+  arch: []
+casadi-pip:
+  arch: []
+cccc:
+  arch:
+  - cccc
+cdk:
+  arch: []
+cdk-dev:
+  arch: []
+checkinstall:
+  arch: []
+chromium-browser:
+  arch:
+  - chromium
+clang:
+  arch:
+  - clang
+clang-format:
+  arch: []
+clang-tidy:
+  arch: []
+cmakelint-pip:
+  arch: []
+coinor-libcbc-dev:
+  arch:
+  - coin-or-cbc
+coinor-libcbc3:
+  arch:
+  - coin-or-cbc
+coinor-libcgl-dev:
+  arch:
+  - coin-or-cgl
+coinor-libclp-dev:
+  arch: []
+coinor-libcoinutils-dev:
+  arch:
+  - coin-or-coinutils
+coinor-libipopt-dev:
+  arch: []
+coinor-libosi-dev:
+  arch:
+  - coin-or-osi
+collectd:
+  arch:
+  - collectd
+collectd-utils:
+  arch:
+  - collectd
+comedi:
+  arch: []
+cppad:
+  arch:
+  - cppad
+cppcheck-junit-pip:
+  arch: []
+crypto++:
+  arch:
+  - crypto++
+curlpp-dev:
+  arch: []
+cython:
+  arch:
+  - cython
+debhelper:
+  arch:
+  - debhelper
+debtree:
+  arch: []
+devscripts:
+  arch:
+  - devscripts
+dfu-util:
+  arch:
+  - dfu-util
+disper:
+  arch:
+  - disper
+dnsmasq:
+  arch:
+  - dnsmasq
+docker-compose:
+  arch:
+  - docker-compose
+docker.io:
+  arch:
+  - docker
+dpath-pip:
+  arch: []
+dpkg-dev:
+  arch:
+  - dpkg
+ds4drv-pip:
+  arch: []
+eclipse:
+  arch:
+  - eclipse-ecj
+ed:
+  arch:
+  - ed
+eigen:
+  arch:
+  - eigen
+enblend:
+  arch:
+  - enblend
+enet:
+  arch:
+  - enet
+espeak:
+  arch:
+  - espeak
+exfat-fuse:
+  arch: []
+exhale-pip:
+  arch: []
+fakeroot:
+  arch:
+  - fakeroot
+festival-dev:
+  arch:
+  - festival
+freetype:
+  arch: []
+fsharp:
+  arch:
+  - fsharp
+fswebcam:
+  arch:
+  - fswebcam
+fxload:
+  arch:
+  - fxload
+g++-5-arm-linux-gnueabihf:
+  arch: []
+g++-5-multilib:
+  arch: []
+g++-multilib:
+  arch: []
+gamin:
+  arch:
+  - gamin
+gazebo11:
+  arch: []
+gazebo9:
+  arch: []
+gcc-arm-none-eabi:
+  arch: []
+gcc-multilib:
+  arch:
+  - gcc-multilib
+gcc-static:
+  arch: []
+gdal-bin:
+  arch:
+  - gdal
+  - python-gdal
+geographiclib:
+  arch:
+  - geographiclib
+geographiclib-tools:
+  arch: []
+gimp:
+  arch:
+  - gimp
+gitg:
+  arch:
+  - gitg
+gitk:
+  arch:
+  - git
+gksu:
+  arch:
+  - gksu
+glc:
+  arch: []
+gnuplot-x11:
+  arch:
+  - gnuplot
+golang-go:
+  arch: []
+gperf:
+  arch:
+  - gperf
+gperftools:
+  arch:
+  - gperftools
+gpsd:
+  arch:
+  - gpsd
+graphviz-dev:
+  arch: []
+gringo:
+  arch: []
+gstreamer0.10-gconf:
+  arch: []
+gstreamer0.10-pocketsphinx:
+  arch: []
+gstreamer1.0-alsa:
+  arch:
+  - gst-plugins-base
+  - gst-plugins-base-libs
+gstreamer1.0-rtsp:
+  arch: []
+gstreamer1.0-tools:
+  arch:
+  - gstreamer
+gunicorn:
+  arch:
+  - gunicorn
+gym-pip:
+  arch: []
+hdf5-tools:
+  arch:
+  - hdf5
+  - hdf5-openmpi
+hugin-tools:
+  arch:
+  - hugin
+i2c-tools:
+  arch:
+  - i2c-tools
+ifstat:
+  arch:
+  - ifstat
+ignition-citadel:
+  arch: []
+ignition-tools:
+  arch:
+  - ignition-tools
+imgaug-pip:
+  arch: []
+intelhex-pip:
+  arch: []
+iperf:
+  arch:
+  - iperf
+iputils-ping:
+  arch:
+  - iputils
+ipython:
+  arch:
+  - ipython
+ipython3:
+  arch:
+  - ipython
+  - ipython2
+jq:
+  arch:
+  - jq
+jupyter-notebook:
+  arch:
+  - jupyter-notebook
+kate:
+  arch:
+  - kate
+konsole:
+  arch:
+  - konsole
+language-pack-de:
+  arch: []
+language-pack-en:
+  arch: []
+lcov:
+  arch:
+  - lcov
+leveldb:
+  arch:
+  - leveldb
+lib32asound2:
+  arch: []
+libalglib-dev:
+  arch:
+  - alglib
+libaria:
+  arch: []
+libav:
+  arch: []
+libavdevice-dev:
+  arch:
+  - ffmpeg
+libbison-dev:
+  arch:
+  - bison
+libboost-atomic:
+  arch: []
+libboost-atomic-dev:
+  arch: []
+libboost-chrono:
+  arch: []
+libboost-chrono-dev:
+  arch: []
+libboost-date-time:
+  arch: []
+libboost-date-time-dev:
+  arch: []
+libboost-dev:
+  arch: []
+libboost-filesystem:
+  arch: []
+libboost-filesystem-dev:
+  arch: []
+libboost-iostreams:
+  arch: []
+libboost-iostreams-dev:
+  arch: []
+libboost-program-options:
+  arch: []
+libboost-program-options-dev:
+  arch: []
+libboost-python:
+  arch: []
+libboost-python-dev:
+  arch: []
+libboost-random:
+  arch: []
+libboost-random-dev:
+  arch: []
+libboost-regex:
+  arch: []
+libboost-regex-dev:
+  arch: []
+libboost-system:
+  arch: []
+libboost-system-dev:
+  arch: []
+libboost-thread:
+  arch: []
+libboost-thread-dev:
+  arch: []
+libcap-ng-dev:
+  arch:
+  - libcap-ng
+libcap-ng0:
+  arch:
+  - libcap-ng
+libcap2:
+  arch:
+  - libcap
+libcereal-dev:
+  arch: []
+libceres-dev:
+  arch: []
+libcoin80-dev:
+  arch: []
+libconfig++-dev:
+  arch: []
+libconfig-dev:
+  arch:
+  - libconfig
+libcos4-dev:
+  arch: []
+libcpprest-dev:
+  arch: []
+libdbus-dev:
+  arch: []
+libdlib-dev:
+  arch: []
+libdpkg-dev:
+  arch:
+  - dpkg
+libdxflib-dev:
+  arch: []
+libesd0-dev:
+  arch: []
+libespeak-dev:
+  arch:
+  - espeak
+libestools-dev:
+  arch: []
+libffi-dev:
+  arch:
+  - libffi
+libfontconfig1-dev:
+  arch:
+  - fontconfig
+  - fontconfig-docs
+libfreetype6:
+  arch:
+  - freetype2
+  - freetype2-demos
+  - freetype2-docs
+libfreetype6-dev:
+  arch:
+  - freetype2
+  - freetype2-demos
+  - freetype2-docs
+libftdipp-dev:
+  arch: []
+libgazebo11-dev:
+  arch: []
+libgazebo9-dev:
+  arch: []
+libgdal-dev:
+  arch:
+  - gdal
+  - python-gdal
+libgeographiclib-dev:
+  arch: []
+libgif-dev:
+  arch:
+  - giflib
+libglfw3-dev:
+  arch:
+  - glfw-doc
+  - glfw-wayland
+  - glfw-x11
+libglw1-mesa:
+  arch: []
+libgmp:
+  arch: []
+libgomp1:
+  arch:
+  - gcc
+  - gcc-ada
+  - gcc-d
+  - gcc-fortran
+  - gcc-go
+  - gcc-libs
+  - gcc-objc
+  - lib32-gcc-libs
+libgstrtspserver-1.0-0:
+  arch: []
+libgstrtspserver-1.0-dev:
+  arch: []
+libgv-python:
+  arch: []
+libhdf5-dev:
+  arch:
+  - hdf5
+  - hdf5-openmpi
+libhidapi-dev:
+  arch:
+  - hidapi
+libicu-dev:
+  arch:
+  - icu
+libignition-cmake2-dev:
+  arch: []
+libignition-common3:
+  arch: []
+libignition-common3-dev:
+  arch: []
+libignition-fuel-tools4:
+  arch: []
+libignition-fuel-tools4-dev:
+  arch: []
+libignition-gazebo3:
+  arch: []
+libignition-gazebo3-dev:
+  arch: []
+libignition-gui3:
+  arch: []
+libignition-gui3-dev:
+  arch: []
+libignition-launch2:
+  arch: []
+libignition-launch2-dev:
+  arch: []
+libignition-math6:
+  arch: []
+libignition-math6-dev:
+  arch: []
+libignition-math6-eigen3-dev:
+  arch: []
+libignition-msgs5:
+  arch: []
+libignition-msgs5-dev:
+  arch: []
+libignition-physics2:
+  arch: []
+libignition-physics2-dev:
+  arch: []
+libignition-plugin-dev:
+  arch: []
+libignition-rendering3:
+  arch: []
+libignition-rendering3-dev:
+  arch: []
+libignition-sensors3:
+  arch: []
+libignition-sensors3-dev:
+  arch: []
+libignition-tools-dev:
+  arch: []
+libignition-transport8:
+  arch: []
+libignition-transport8-dev:
+  arch: []
+libiw-dev:
+  arch:
+  - wireless_tools
+libjack-dev:
+  arch:
+  - jack
+libjackson-json-java:
+  arch: []
+libjansson-dev:
+  arch:
+  - jansson
+libjaxp1.3-java:
+  arch: []
+libjson-java:
+  arch: []
+libjsoncpp:
+  arch: []
+libkdtree++-dev:
+  arch: []
+liblapacke-dev:
+  arch:
+  - blas
+  - cblas
+  - lapack
+  - lapack-doc
+  - lapacke
+liblinear-dev:
+  arch: []
+liblinphone-dev:
+  arch: []
+liblzma-dev:
+  arch:
+  - xz
+libmarble-dev:
+  arch:
+  - marble
+  - marble-common
+  - marble-qt
+libmicrohttpd:
+  arch:
+  - libmicrohttpd
+libmlpack-dev:
+  arch: []
+libmodbus-dev:
+  arch:
+  - libmodbus-dev
+libmodbus5:
+  arch: []
+libmongoc-1.0-0:
+  arch:
+  - mongo-c-driver
+libmongoc-dev:
+  arch:
+  - mongo-c-driver
+libmongoclient-dev:
+  arch: []
+libmpich-dev:
+  arch: []
+libmpich2-dev:
+  arch: []
+libmysqlcppconn-dev:
+  arch: []
+libneon27-gnutls-dev:
+  arch:
+  - neon
+libnewmat10-dev:
+  arch: []
+libnlopt-dev:
+  arch:
+  - nlopt
+libnlopt0:
+  arch:
+  - nlopt
+libnotify:
+  arch:
+  - libnotify
+libnss3-dev:
+  arch:
+  - ca-certificates-mozilla
+  - nss
+libopal-dev:
+  arch: []
+libopenblas-dev:
+  arch:
+  - openblas
+libopencv-contrib-dev:
+  arch:
+  - opencv
+  - opencv-samples
+libopenni-nite-dev:
+  arch: []
+libopensplice67:
+  arch: []
+libopensplice69:
+  arch: []
+liborocos-bfl:
+  arch: []
+liborocos-bfl-dev:
+  arch: []
+liborocos-kdl:
+  arch: []
+liborocos-kdl-dev:
+  arch: []
+libphonon:
+  arch: []
+libphonon-dev:
+  arch:
+  - phonon-qt5
+libpng++-dev:
+  arch: []
+libpocofoundation9:
+  arch: []
+libpqxx:
+  arch:
+  - libpqxx
+libpqxx-dev:
+  arch:
+  - libpqxx
+libprocps-dev:
+  arch:
+  - procps-ng
+libprocps6:
+  arch:
+  - procps-ng
+libpt-dev:
+  arch: []
+libpulse-dev:
+  arch:
+  - libpulse
+  - pulseaudio
+  - pulseaudio-bluetooth
+  - pulseaudio-equalizer
+  - pulseaudio-jack
+  - pulseaudio-lirc
+  - pulseaudio-zeroconf
+libqcustomplot-dev:
+  arch:
+  - qcustomplot
+libqd-dev:
+  arch:
+  - qd
+libqglviewer-dev-qt5:
+  arch: []
+libqglviewer2-qt5:
+  arch: []
+libqrencode:
+  arch: []
+libqrencode-dev:
+  arch:
+  - qrencode
+libqt5-gstreamer-dev:
+  arch: []
+libqt5-multimedia:
+  arch: []
+libqt5-qml:
+  arch: []
+libqt5-quick:
+  arch: []
+libqt5-svg-dev:
+  arch: []
+libqt5-xml:
+  arch: []
+librabbitmq-dev:
+  arch: []
+librdkafka-dev:
+  arch:
+  - librdkafka
+libreadline-java:
+  arch: []
+libsecp256k1-dev:
+  arch:
+  - libsecp256k1
+libserial-dev:
+  arch: []
+libsimage-dev:
+  arch: []
+libsndfile1-dev:
+  arch:
+  - libsndfile
+libspatialindex-dev:
+  arch:
+  - spatialindex
+libsrtp0-dev:
+  arch: []
+libssh-dev:
+  arch:
+  - libssh
+  - libssh-docs
+libsvm-dev:
+  arch:
+  - libsvm
+libsvm3:
+  arch:
+  - libsvm
+libsvn-dev:
+  arch:
+  - subversion
+libsystemd-dev:
+  arch:
+  - systemd
+  - systemd-libs
+  - systemd-resolvconf
+  - systemd-sysvcompat
+libtesseract:
+  arch: []
+libttspico:
+  arch: []
+libunwind:
+  arch:
+  - libunwind
+libunwind-dev:
+  arch:
+  - libunwind
+libusb-1.0:
+  arch: []
+libusb-1.0-dev:
+  arch: []
+libuv-dev:
+  arch: []
+libvlc:
+  arch:
+  - libvlc
+libvlc-dev:
+  arch:
+  - vlc
+libvlccore-dev:
+  arch:
+  - vlc
+libvpx-dev:
+  arch:
+  - libvpx
+libvulkan-dev:
+  arch: []
+libwebp-dev:
+  arch:
+  - libwebp
+libx264-dev:
+  arch:
+  - x264
+libxcursor-dev:
+  arch:
+  - libxcursor
+libxenomai-dev:
+  arch: []
+libxft-dev:
+  arch: []
+libxkbcommon-dev:
+  arch:
+  - libxkbcommon
+  - libxkbcommon-doc
+  - libxkbcommon-x11
+libxml2-utils:
+  arch:
+  - libxml2
+libzip-dev:
+  arch:
+  - libzip
+libzmqpp-dev:
+  arch: []
+libzmqpp3:
+  arch: []
+light-locker:
+  arch:
+  - light-locker
+lighttpd:
+  arch:
+  - lighttpd
+linphone:
+  arch: []
+mapnik-utils:
+  arch:
+  - mapnik
+matio:
+  arch: []
+mayavi:
+  arch:
+  - mayavi
+meld:
+  arch:
+  - meld
+mercurial:
+  arch:
+  - mercurial
+mesa-utils:
+  arch:
+  - mesa-demos
+mkdocs:
+  arch:
+  - mkdocs
+mkdocs-bootstrap:
+  arch: []
+mkdocs-bootswatch:
+  arch:
+  - mkdocs-bootswatch
+mongodb:
+  arch:
+  - mongodb
+mono-complete:
+  arch:
+  - mono
+mono-devel:
+  arch:
+  - mono
+mosquitto-clients:
+  arch:
+  - mosquitto
+mosquitto-dev:
+  arch:
+  - mosquitto
+mrpt:
+  arch:
+  - mrpt
+multistrap:
+  arch:
+  - multistrap
+muparser:
+  arch:
+  - muparser
+netcdf:
+  arch:
+  - netcdf
+network-manager:
+  arch:
+  - libnm
+  - networkmanager
+  - nm-cloud-setup
+nite-dev:
+  arch: []
+nkf:
+  arch:
+  - nkf
+nlohmann-json-dev:
+  arch:
+  - nlohmann-json
+nmap:
+  arch:
+  - nmap
+nodejs:
+  arch:
+  - nodejs
+nodejs-legacy:
+  arch: []
+npm:
+  arch:
+  - npm
+nuitka:
+  arch:
+  - nuitka
+nvidia-cuda:
+  arch: []
+nvidia-cuda-dev:
+  arch:
+  - cuda
+ocl-icd-opencl-dev:
+  arch:
+  - ocl-icd
+odb:
+  arch:
+  - odb
+opcua-pip:
+  arch: []
+openjdk-6-jdk:
+  arch: []
+openocd:
+  arch:
+  - openocd
+opensplice:
+  arch: []
+openssh-client:
+  arch:
+  - openssh
+openssh-server:
+  arch:
+  - openssh
+optipng:
+  arch:
+  - optipng
+osm2pgsql:
+  arch: []
+osmium:
+  arch: []
+pandoc:
+  arch:
+  - pandoc
+phantomjs:
+  arch:
+  - phantomjs
+pi-ina219-pip:
+  arch: []
+pigz:
+  arch:
+  - pigz
+pika:
+  arch: []
+pmount:
+  arch:
+  - pmount
+pocketsphinx-bin:
+  arch: []
+polyclipping-dev:
+  arch: []
+poppler-utils:
+  arch:
+  - poppler
+  - poppler-glib
+  - poppler-qt5
+portaudio19-dev:
+  arch:
+  - portaudio
+postgresql:
+  arch:
+  - postgresql
+postgresql-9.x-postgis:
+  arch: []
+postgresql-client:
+  arch:
+  - postgresql-client
+postgresql-postgis:
+  arch: []
+potrace:
+  arch:
+  - potrace
+ps-engine:
+  arch: []
+pstoedit:
+  arch:
+  - pstoedit
+psutils:
+  arch:
+  - psutils
+pugixml-dev:
+  arch: []
+pydocstyle:
+  arch:
+  - python-pydocstyle
+pydrive-pip:
+  arch: []
+pyflakes3:
+  arch: []
+pymap3d-pip:
+  arch: []
+pymodbustcp-pip:
+  arch: []
+pynput-pip:
+  arch: []
+pyosmium:
+  arch:
+  - pyosmium
+pyper-pip:
+  arch: []
+pyqt5-dev-tools:
+  arch:
+  - python-pyqt5
+  - python2-pyqt5
+pyrebase-pip:
+  arch: []
+pyros-setup-pip:
+  arch: []
+pyside-tools:
+  arch: []
+python-adafruit-bno055-pip:
+  arch: []
+python-alembic:
+  arch:
+  - python-alembic
+python-amqp:
+  arch:
+  - python-amqp
+python-aniso8601:
+  arch:
+  - python-aniso8601
+python-annoy-pip:
+  arch: []
+python-anyjson:
+  arch:
+  - python-anyjson
+python-apparmor:
+  arch:
+  - apparmor
+python-argcomplete:
+  arch:
+  - python-argcomplete
+python-argh:
+  arch:
+  - python-argh
+python-astor-pip:
+  arch: []
+python-attrs:
+  arch:
+  - python2-attrs
+python-attrs-pip:
+  arch: []
+python-autobahn:
+  arch:
+  - python2-autobahn
+python-babel:
+  arch:
+  - python2-babel
+python-backoff-pip:
+  arch: []
+python-backports.ssl-match-hostname:
+  arch: []
+python-bitarray:
+  arch:
+  - python2-bitarray
+python-bitstring:
+  arch:
+  - python2-bitstring
+python-bitstring-pip:
+  arch: []
+python-blinker:
+  arch: []
+python-bloom:
+  arch:
+  - python2-bloom
+python-bokeh-pip:
+  arch: []
+python-boltons:
+  arch:
+  - python2-boltons
+python-bottle:
+  arch:
+  - python2-bottle
+python-box2d:
+  arch:
+  - python-pybox2d
+python-breathe:
+  arch: []
+python-bs4:
+  arch:
+  - python2-bs4
+python-bson:
+  arch: []
+python-can:
+  arch:
+  - python2-can
+python-cantools-pip:
+  arch: []
+python-catkin-lint:
+  arch: []
+python-catkin-sphinx:
+  arch: []
+python-cbor:
+  arch:
+  - python-cbor
+python-celery:
+  arch: []
+python-certifi:
+  arch:
+  - python-certifi
+python-chainer-mask-rcnn-pip:
+  arch: []
+python-chainer-pip:
+  arch: []
+python-chainercv-pip:
+  arch: []
+python-cheetah:
+  arch:
+  - python2-cheetah
+python-cherrypy:
+  arch:
+  - python2-cherrypy
+python-clearsilver:
+  arch: []
+python-click:
+  arch:
+  - python2-click
+python-cobs-pip:
+  arch: []
+python-collada:
+  arch: []
+python-concurrent.futures:
+  arch: []
+python-construct:
+  arch:
+  - python2-construct
+python-construct-pip:
+  arch: []
+python-control-pip:
+  arch: []
+python-cookiecutter:
+  arch:
+  - python-cookiecutter
+python-couchdb:
+  arch:
+  - python-couchdb
+python-cpplint:
+  arch: []
+python-crccheck-pip:
+  arch: []
+python-cryptography:
+  arch:
+  - python2-cryptography
+python-cython-pip:
+  arch: []
+python-datadog-pip:
+  arch: []
+python-deap-pip:
+  arch: []
+python-debian:
+  arch:
+  - python2-debian
+python-deepdiff-pip:
+  arch: []
+python-defer-pip:
+  arch: []
+python-dev:
+  arch: []
+python-dialogflow-pip:
+  arch: []
+python-django:
+  arch:
+  - python-django
+python-django-cors-headers:
+  arch: []
+python-django-extensions:
+  arch:
+  - python-django-extensions
+python-django-extra-views:
+  arch:
+  - python2-django-extra-views
+python-djangorestframework:
+  arch: []
+python-dlib:
+  arch:
+  - python2-dlib
+python-docopt:
+  arch:
+  - python2-docopt
+python-docx:
+  arch: []
+python-dxfgrabber-pip:
+  arch: []
+python-easygui:
+  arch:
+  - python2-easygui
+python-enum:
+  arch: []
+python-enum34:
+  arch:
+  - python2-enum34
+python-enum34-pip:
+  arch: []
+python-espeak:
+  arch:
+  - python2-espeak
+python-evdev:
+  arch:
+  - python2-evdev
+python-expiringdict:
+  arch:
+  - python2-expiringdict
+python-face-alignment-pip:
+  arch: []
+python-face-recognition-pip:
+  arch: []
+python-falcon:
+  arch:
+  - python-falcon
+python-fastdtw-pip:
+  arch: []
+python-fcl-pip:
+  arch: []
+python-fcn-pip:
+  arch: []
+python-filterpy-pip:
+  arch: []
+python-fixtures:
+  arch:
+  - python-fixtures
+python-flake8:
+  arch:
+  - python2-flake8
+python-flask-appbuilder-pip:
+  arch: []
+python-flask-cors-pip:
+  arch: []
+python-flask-restful:
+  arch:
+  - python-flask-restful
+python-flatdict-pip:
+  arch: []
+python-freezegun-pip:
+  arch: []
+python-frozendict:
+  arch:
+  - python-frozendict
+python-ftdi1:
+  arch:
+  - libftdi
+  - libftdi-compat
+python-funcsigs:
+  arch:
+  - python2-funcsigs
+python-future:
+  arch:
+  - python2-future
+python-fuzzywuzzy-pip:
+  arch: []
+python-fysom:
+  arch: []
+python-gTTS-pip:
+  arch: []
+python-gcloud-pip:
+  arch: []
+python-gdal:
+  arch:
+  - python2-gdal
+python-gdown-pip:
+  arch: []
+python-genshi:
+  arch:
+  - python2-genshi
+python-geocoder-pip:
+  arch: []
+python-geographiclib:
+  arch: []
+python-geopy:
+  arch:
+  - python2-geopy
+python-gevent:
+  arch:
+  - python2-gevent
+python-gi-cairo:
+  arch:
+  - pygobject-devel
+  - python-gobject
+  - python2-gobject
+python-github-pip:
+  arch: []
+python-gitlab:
+  arch:
+  - python-gitlab
+python-gitpython-pip:
+  arch: []
+python-gnupg:
+  arch:
+  - python-gnupg
+python-google-cloud-bigquery-pip:
+  arch: []
+python-google-cloud-speech-pip:
+  arch: []
+python-google-cloud-texttospeech-pip:
+  arch: []
+python-google-cloud-vision-pip:
+  arch: []
+python-googleapi:
+  arch:
+  - python-google-api-python-client
+python-gpiozero:
+  arch: []
+python-gpxpy:
+  arch:
+  - python2-gpxpy
+python-graphitesend-pip:
+  arch: []
+python-graphviz-pip:
+  arch: []
+python-gridfs:
+  arch: []
+python-grpc-tools:
+  arch: []
+python-grpcio:
+  arch: []
+python-grpcio-testing-pip:
+  arch: []
+python-gst-1.0:
+  arch:
+  - gst-python
+python-h5py:
+  arch:
+  - python-h5py
+  - python-h5py-openmpi
+python-httplib2:
+  arch:
+  - python2-httplib2
+python-hypothesis:
+  arch:
+  - python-hypothesis
+python-imageio:
+  arch:
+  - python2-imageio
+python-imaging-imagetk:
+  arch: []
+python-impacket:
+  arch:
+  - impacket
+python-influxdb:
+  arch:
+  - python2-influxdb
+python-inject-pip:
+  arch: []
+python-inotify-simple-pip:
+  arch: []
+python-inputs-pip:
+  arch: []
+python-ipdb:
+  arch: []
+python-itsdangerous:
+  arch:
+  - python-itsdangerous
+python-jasmine-pip:
+  arch: []
+python-jinja2:
+  arch: []
+python-jira-pip:
+  arch: []
+python-jmespath:
+  arch:
+  - python2-jmespath
+python-joblib:
+  arch: []
+python-jsonpyes-pip:
+  arch: []
+python-jsonref-pip:
+  arch: []
+python-jsonschema:
+  arch:
+  - python2-jsonschema
+python-jsonschema-pip:
+  arch: []
+python-jwt:
+  arch: []
+python-kdtree:
+  arch: []
+python-keras-pip:
+  arch: []
+python-keras-rl-pip:
+  arch: []
+python-kml:
+  arch: []
+python-kombu:
+  arch: []
+python-kombu-pip:
+  arch: []
+python-levenshtein:
+  arch:
+  - python2-levenshtein
+python-libpcap:
+  arch: []
+python-libpgm-pip:
+  arch: []
+python-librabbitmq-pip:
+  arch: []
+python-lindypy-pip:
+  arch: []
+python-lttngust:
+  arch:
+  - python2-lttngust
+python-luis-pip:
+  arch: []
+python-lzf-pip:
+  arch: []
+python-mahotas:
+  arch:
+  - python2-mahotas
+python-mako:
+  arch:
+  - python2-mako
+python-mapnik:
+  arch:
+  - python2-mapnik
+python-markdown:
+  arch:
+  - python2-markdown
+python-marshmallow:
+  arch: []
+python-math3d-pip:
+  arch: []
+python-more-itertools-pip:
+  arch: []
+python-moviepy-pip:
+  arch: []
+python-multicast:
+  arch: []
+python-multiprocess-pip:
+  arch: []
+python-mysqldb:
+  arch: []
+python-namedlist-pip:
+  arch: []
+python-netaddr:
+  arch:
+  - python-netaddr
+python-networkmanager:
+  arch: []
+python-ntplib:
+  arch:
+  - python2-ntplib
+python-numpy-quaternion-pip:
+  arch: []
+python-numpy-stl-pip:
+  arch: []
+python-oauth2:
+  arch:
+  - python2-oauth2
+python-oauth2client:
+  arch:
+  - python2-oauth2client
+python-objectpath-pip:
+  arch: []
+python-omniorb:
+  arch: []
+python-open3d-pip:
+  arch: []
+python-openssl:
+  arch:
+  - python-pyopenssl
+  - python2-pyopenssl
+python-oyaml-pip:
+  arch: []
+python-packaging:
+  arch:
+  - python2-packaging
+python-paho-mqtt-pip:
+  arch: []
+python-pandacan-pip:
+  arch: []
+python-parameterized:
+  arch:
+  - python-parameterized
+python-parse:
+  arch:
+  - python-parse
+python-parso:
+  arch:
+  - python-parso
+python-passlib:
+  arch:
+  - python-passlib
+python-pastedeploy:
+  arch: []
+python-path.py:
+  arch: []
+python-pathos-pip:
+  arch: []
+python-pathtools:
+  arch:
+  - python-pathtools
+python-pbr:
+  arch:
+  - python2-pbr
+python-pcapy:
+  arch:
+  - python-pcapy
+python-pcg-gazebo-pip:
+  arch: []
+python-pep8:
+  arch: []
+python-percol:
+  arch: []
+python-periphery-pip:
+  arch: []
+python-persist-queue-pip:
+  arch: []
+python-pixel-ring-pip:
+  arch: []
+python-pkg-resources:
+  arch:
+  - python-setuptools
+  - python2-setuptools
+python-planar-pip:
+  arch: []
+python-plyfile-pip:
+  arch: []
+python-poster:
+  arch: []
+python-pqdict-pip:
+  arch: []
+python-prettytable:
+  arch:
+  - python2-prettytable
+python-progressbar:
+  arch: []
+python-progressbar2-pip:
+  arch: []
+python-protobuf:
+  arch:
+  - python2-protobuf
+python-psycopg2:
+  arch:
+  - python2-psycopg2
+python-pulsectl-pip:
+  arch: []
+python-pyaudio:
+  arch:
+  - python2-pyaudio
+python-pycpd-pip:
+  arch: []
+python-pycurl:
+  arch:
+  - python2-pycurl
+python-pydbus:
+  arch:
+  - python2-pydbus
+python-pydot:
+  arch: []
+python-pyexiv2:
+  arch: []
+python-pyftpdlib:
+  arch:
+  - python-pyftpdlib
+python-pygithub3:
+  arch: []
+python-pygps-pip:
+  arch: []
+python-pygraph:
+  arch: []
+python-pygraphviz:
+  arch: []
+python-pyinotify:
+  arch:
+  - python2-pyinotify
+python-pykalman:
+  arch: []
+python-pylibftdi-pip:
+  arch: []
+python-pylint:
+  arch:
+  - python2-pylint
+python-pylint3:
+  arch: []
+python-pymavlink:
+  arch: []
+python-pymodbus:
+  arch:
+  - python2-pymodbus
+python-pymongo:
+  arch: []
+python-pymouse:
+  arch: []
+python-pynfft:
+  arch: []
+python-pynmea2:
+  arch:
+  - python2-pynmea2
+python-pypcd-pip:
+  arch: []
+python-pypng:
+  arch:
+  - python2-pypng
+python-pypozyx-pip:
+  arch: []
+python-pyproj:
+  arch:
+  - python-pyproj
+python-pyquery:
+  arch: []
+python-pyramid:
+  arch:
+  - python2-pyramid
+python-pyrealsense2-pip:
+  arch: []
+python-pyside.qtuitools:
+  arch: []
+python-pysnmp:
+  arch: []
+python-pytesseract-pip:
+  arch: []
+python-pytest-dependency-pip:
+  arch: []
+python-pytest-qt-pip:
+  arch: []
+python-pytides-pip:
+  arch: []
+python-pytorch-pip:
+  arch: []
+python-pytz-pip:
+  arch: []
+python-pyudev:
+  arch:
+  - python2-pyudev
+python-pyusb-pip:
+  arch: []
+python-pyuserinput:
+  arch: []
+python-pyvirtualdisplay-pip:
+  arch: []
+python-pyxhook-pip:
+  arch: []
+python-pyzbar-pip:
+  arch: []
+python-qrencode:
+  arch:
+  - python-qrencode
+python-qt-bindings-webkit:
+  arch: []
+python-qt4-gl:
+  arch: []
+python-qt5-bindings-qsci:
+  arch: []
+python-qt5-bindings-quick:
+  arch: []
+python-qwt5-qt4:
+  arch: []
+python-rdflib:
+  arch: []
+python-readchar-pip:
+  arch: []
+python-redis:
+  arch:
+  - python-redis
+python-redis-pip:
+  arch: []
+python-requests:
+  arch:
+  - python2-requests
+python-requests-oauthlib:
+  arch:
+  - python-requests-oauthlib
+python-responses-pip:
+  arch: []
+python-rosdistro:
+  arch:
+  - python2-rosdistro
+python-rpi.gpio:
+  arch:
+  - python2-rpi.gpio
+python-rpi.gpio-pip:
+  arch: []
+python-rrdtool:
+  arch:
+  - python2-rrdtool
+python-rtree:
+  arch:
+  - python2-rtree
+python-ruamel.yaml:
+  arch: []
+python-rx-pip:
+  arch: []
+python-scapy:
+  arch:
+  - python-scapy
+  - scapy
+python-schedule:
+  arch:
+  - python2-schedule
+python-scp:
+  arch: []
+python-seaborn:
+  arch: []
+python-selectors2-pip:
+  arch: []
+python-selenium-pip:
+  arch: []
+python-semver:
+  arch:
+  - python-semver
+python-setproctitle:
+  arch:
+  - python2-setproctitle
+python-sexpdata:
+  arch:
+  - python2-sexpdata
+python-sh:
+  arch:
+  - python-sh
+python-shapely:
+  arch:
+  - python-shapely
+python-singledispatch:
+  arch:
+  - python2-singledispatch
+python-sip:
+  arch:
+  - python2-sip
+python-sip4:
+  arch: []
+python-skimage:
+  arch: []
+python-skimage-pip:
+  arch: []
+python-sklearn:
+  arch:
+  - python-scikit-learn
+python-slackclient-pip:
+  arch: []
+python-slacker-cli:
+  arch: []
+python-slycot-pip:
+  arch: []
+python-smbus:
+  arch:
+  - i2c-tools
+python-sortedcontainers-pip:
+  arch: []
+python-sparqlwrapper:
+  arch: []
+python-speechrecognition-pip:
+  arch: []
+python-sphinx-argparse:
+  arch: []
+python-sphinx-rtd-theme:
+  arch: []
+python-sqlalchemy:
+  arch:
+  - python2-sqlalchemy
+python-sqlite:
+  arch: []
+python-statsd:
+  arch: []
+python-subprocess32:
+  arch:
+  - python2-subprocess32
+python-support:
+  arch:
+  - python2-support
+python-svg.path:
+  arch:
+  - python2-svg.path
+python-svn:
+  arch: []
+python-sympy:
+  arch:
+  - python-sympy
+python-sysv-ipc:
+  arch:
+  - python2-sysv-ipc
+python-tablib:
+  arch: []
+python-tablib-pip:
+  arch: []
+python-tabulate:
+  arch:
+  - python-tabulate
+python-tabulate-pip:
+  arch: []
+python-tblib:
+  arch:
+  - python-tblib
+python-telegram-bot:
+  arch: []
+python-tensorboardX-pip:
+  arch: []
+python-tensorflow-gpu-pip:
+  arch: []
+python-tensorflow-hub-pip:
+  arch: []
+python-tensorflow-pip:
+  arch: []
+python-termcolor:
+  arch:
+  - python-termcolor
+python-testscenarios:
+  arch:
+  - python-testscenarios
+python-testtools:
+  arch:
+  - python-testtools
+python-texttable:
+  arch: []
+python-tftpy:
+  arch:
+  - python-tftpy
+python-tilestache:
+  arch: []
+python-tinydb-pip:
+  arch: []
+python-toml:
+  arch:
+  - python2-toml
+python-tornado-couchdb-pip:
+  arch: []
+python-tornado-pip:
+  arch: []
+python-tqdm:
+  arch:
+  - python2-tqdm
+python-transforms3d-pip:
+  arch: []
+python-transitions:
+  arch: []
+python-trep:
+  arch: []
+python-triangle-pip:
+  arch: []
+python-twitter:
+  arch:
+  - python2-twitter
+python-tzlocal-pip:
+  arch: []
+python-ujson:
+  arch:
+  - python2-ujson
+python-unittest2:
+  arch:
+  - python2-unittest2
+python-usb:
+  arch:
+  - python-pyusb
+python-utm-pip:
+  arch: []
+python-validictory-pip:
+  arch: []
+python-vcstool:
+  arch:
+  - python2-vcstool
+python-vcstools:
+  arch:
+  - python2-vcstools
+python-vine-pip:
+  arch: []
+python-virtualenv:
+  arch:
+  - python2-virtualenv
+python-visual:
+  arch: []
+python-vlc-pip:
+  arch: []
+python-voluptuous:
+  arch:
+  - python-voluptuous
+python-w1thermsensor-pip:
+  arch: []
+python-waitress:
+  arch: []
+python-walrus-pip:
+  arch: []
+python-watchdog:
+  arch:
+  - python-watchdog
+python-webob:
+  arch:
+  - python2-webob
+python-webpy:
+  arch: []
+python-webrtcvad-pip:
+  arch: []
+python-websocket:
+  arch: []
+python-webtest:
+  arch: []
+python-wheel:
+  arch:
+  - python2-wheel
+python-wrapt:
+  arch:
+  - python2-wrapt
+python-ws4py:
+  arch:
+  - python2-ws4py
+python-ws4py-pip:
+  arch: []
+python-wstool:
+  arch:
+  - python2-wstool
+python-wtforms:
+  arch: []
+python-wxtools:
+  arch:
+  - python2-wxpython3
+  - python-wxpython
+python-xdot:
+  arch:
+  - python2-xdot
+python-xlib:
+  arch:
+  - python2-xlib
+python-xlrd:
+  arch:
+  - python-xlrd
+python-xmltodict:
+  arch:
+  - python-xmltodict
+python-zbar:
+  arch:
+  - python2-zbar
+python3:
+  arch:
+  - python3
+python3-asyncssh:
+  arch:
+  - python-asyncssh
+python3-autobahn:
+  arch:
+  - python-autobahn
+python3-babeltrace:
+  arch:
+  - python-babeltrace
+python3-backoff-pip:
+  arch: []
+python3-bokeh-pip:
+  arch: []
+python3-boto3:
+  arch:
+  - python-boto3
+python3-bson:
+  arch:
+  - python-bson
+python3-can:
+  arch:
+  - python-can
+python3-catkin-lint:
+  arch: []
+python3-catkin-pkg:
+  arch: []
+python3-catkin-pkg-modules:
+  arch: []
+python3-click:
+  arch:
+  - python-click
+python3-collada:
+  arch: []
+python3-collada-pip:
+  arch: []
+python3-coverage:
+  arch:
+  - python-coverage
+python3-cryptography:
+  arch:
+  - python-cryptography
+python3-datadog-pip:
+  arch: []
+python3-defusedxml:
+  arch:
+  - python-defusedxml
+python3-dev:
+  arch: []
+python3-distutils:
+  arch: []
+python3-django:
+  arch:
+  - python-django
+python3-django-cors-headers:
+  arch:
+  - python-django-cors-headers
+python3-django-extensions:
+  arch:
+  - python-django-extensions
+python3-django-extra-views:
+  arch:
+  - python-django-extra-views
+python3-djangorestframework:
+  arch: []
+python3-empy:
+  arch:
+  - python-empy
+python3-filterpy-pip:
+  arch: []
+python3-flake8:
+  arch:
+  - flake8
+  - python2-flake8
+python3-future:
+  arch:
+  - python-future
+python3-gitlab:
+  arch:
+  - python-gitlab
+python3-gnupg:
+  arch:
+  - python-gnupg
+python3-grpc-tools:
+  arch: []
+python3-grpcio:
+  arch:
+  - python-grpcio
+python3-hypothesis:
+  arch:
+  - python-hypothesis
+python3-ifcfg:
+  arch: []
+python3-imageio:
+  arch:
+  - python-imageio
+python3-importlib-metadata:
+  arch:
+  - python-importlib-metadata
+python3-lark-parser:
+  arch:
+  - python-lark-parser
+python3-lttng:
+  arch: []
+python3-lxml:
+  arch:
+  - python-lxml
+python3-markdown:
+  arch:
+  - python-markdown
+python3-mock:
+  arch:
+  - python-mock
+python3-netifaces:
+  arch:
+  - python-netifaces
+python3-networkx:
+  arch:
+  - python-networkx
+python3-nose:
+  arch:
+  - python-nose
+python3-nose-yanc:
+  arch: []
+python3-numpy:
+  arch:
+  - python-numpy
+python3-opencv:
+  arch:
+  - opencv
+  - opencv-samples
+python3-opengl:
+  arch:
+  - python-opengl
+python3-packaging:
+  arch:
+  - python-packaging
+python3-pandas:
+  arch:
+  - python-pandas
+python3-paramiko:
+  arch:
+  - python-paramiko
+python3-pcg-gazebo-pip:
+  arch: []
+python3-pep8:
+  arch:
+  - python-pep8
+python3-pexpect:
+  arch:
+  - python-pexpect
+python3-pika:
+  arch:
+  - python-pika
+python3-pip:
+  arch:
+  - python-pip
+python3-pkg-resources:
+  arch:
+  - python-setuptools
+  - python2-setuptools
+python3-prometheus-client:
+  arch:
+  - python-prometheus_client
+python3-pyassimp:
+  arch:
+  - python-pyassimp
+python3-pygame:
+  arch:
+  - python-pygame
+python3-pygraphviz:
+  arch:
+  - python-pygraphviz
+python3-pykdl:
+  arch: []
+python3-pyqt5.qtwebengine:
+  arch:
+  - python-pyqt5
+  - python2-pyqt5
+python3-pyswarms-pip:
+  arch: []
+python3-pytest-timeout:
+  arch:
+  - python-pytest-timeout
+python3-qt5-bindings-gl:
+  arch: []
+python3-qt5-bindings-webkit:
+  arch: []
+python3-rafcon-pip:
+  arch: []
+python3-requests:
+  arch:
+  - python-requests
+python3-rosdep:
+  arch:
+  - python-rosdep
+python3-rosdep-modules:
+  arch: []
+python3-rosdistro-modules:
+  arch: []
+python3-rospkg:
+  arch:
+  - python-rospkg
+python3-rtree:
+  arch:
+  - python-rtree
+python3-ruamel.yaml:
+  arch: []
+python3-schedule:
+  arch:
+  - python-schedule
+python3-scp:
+  arch:
+  - python-scp
+python3-serial:
+  arch:
+  - python-pyserial
+  - python2-pyserial
+python3-setuptools:
+  arch:
+  - python-setuptools
+python3-sexpdata:
+  arch:
+  - python-sexpdata
+python3-sip:
+  arch:
+  - python-sip
+python3-skimage:
+  arch: []
+python3-sklearn:
+  arch:
+  - python-scikit-learn
+python3-sphinx:
+  arch:
+  - python-sphinx
+python3-sphinx-argparse:
+  arch:
+  - python-sphinx-argparse
+python3-sphinx-rtd-theme:
+  arch: []
+python3-sqlalchemy:
+  arch:
+  - python-sqlalchemy
+python3-tensorboardX-pip:
+  arch: []
+python3-termcolor:
+  arch:
+  - python-termcolor
+python3-tilestache-pip:
+  arch: []
+python3-tk:
+  arch: []
+python3-tqdm:
+  arch:
+  - python-tqdm
+python3-triangle-pip:
+  arch: []
+python3-usb:
+  arch:
+  - python-pyusb
+python3-vcstool:
+  arch:
+  - python-vcstool
+python3-venv:
+  arch: []
+python3-websocket:
+  arch: []
+python3-west-pip:
+  arch: []
+python3-yaml:
+  arch:
+  - python-yaml
+qdarkstyle-pip:
+  arch: []
+qml-module-qtmultimedia:
+  arch:
+  - qt5-wayland
+  - qt5-virtualkeyboard
+  - qt5-3d
+  - qt5-base
+  - qt5-charts
+  - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-doc
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
+  - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
+qml-module-qtquick-controls:
+  arch:
+  - qt5-wayland
+  - qt5-virtualkeyboard
+  - qt5-3d
+  - qt5-base
+  - qt5-charts
+  - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-doc
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
+  - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
+qml-module-qtquick-controls2:
+  arch:
+  - qt5-wayland
+  - qt5-virtualkeyboard
+  - qt5-3d
+  - qt5-base
+  - qt5-charts
+  - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-doc
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
+  - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
+qml-module-qtquick-dialogs:
+  arch:
+  - qt5-wayland
+  - qt5-virtualkeyboard
+  - qt5-3d
+  - qt5-base
+  - qt5-charts
+  - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-doc
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
+  - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
+qml-module-qtquick-layouts:
+  arch:
+  - qt5-wayland
+  - qt5-virtualkeyboard
+  - qt5-3d
+  - qt5-base
+  - qt5-charts
+  - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-doc
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
+  - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
+qml-module-qtquick-templates2:
+  arch:
+  - qt5-wayland
+  - qt5-virtualkeyboard
+  - qt5-3d
+  - qt5-base
+  - qt5-charts
+  - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-doc
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
+  - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
+qml-module-qtquick2:
+  arch:
+  - qt5-wayland
+  - qt5-virtualkeyboard
+  - qt5-3d
+  - qt5-base
+  - qt5-charts
+  - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-doc
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
+  - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
+qtbase5-private-dev:
+  arch:
+  - qt5-wayland
+  - qt5-virtualkeyboard
+  - qt5-3d
+  - qt5-base
+  - qt5-charts
+  - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-doc
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
+  - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
+qtmobility-dev:
+  arch: []
+qttools5-dev:
+  arch:
+  - qt5-wayland
+  - qt5-virtualkeyboard
+  - qt5-3d
+  - qt5-base
+  - qt5-charts
+  - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-doc
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
+  - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
+qttools5-dev-tools:
+  arch:
+  - qt5-wayland
+  - qt5-virtualkeyboard
+  - qt5-3d
+  - qt5-base
+  - qt5-charts
+  - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-doc
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
+  - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
+quadprog-pip:
+  arch: []
+r-base:
+  arch:
+  - r
+r-base-dev:
+  arch:
+  - r
+range-v3:
+  arch:
+  - range-v3
+rapidjson-dev:
+  arch:
+  - rapidjson
+robotino-api2:
+  arch: []
+rosbag-metadata-pip:
+  arch: []
+rosemacs-el:
+  arch: []
+rsyslog:
+  arch:
+  - rsyslog
+rti-connext-dds-5.3.1:
+  arch: []
+rtmidi:
+  arch:
+  - rtmidi
+sdformat:
+  arch:
+  - sdformat
+sdl2:
+  arch:
+  - sdl2
+sdl2-mixer:
+  arch: []
+sdl2-ttf:
+  arch: []
+setserial:
+  arch:
+  - setserial
+sixad:
+  arch: []
+slime:
+  arch:
+  - slime
+sound-theme-freedesktop:
+  arch:
+  - sound-theme-freedesktop
+sox:
+  arch:
+  - sox
+sparsehash:
+  arch:
+  - sparsehash
+spdlog:
+  arch:
+  - spdlog
+speech-dispatcher:
+  arch:
+  - speech-dispatcher
+speex:
+  arch:
+  - speex
+sphinxcontrib-bibtex-pip:
+  arch: []
+ssh-askpass:
+  arch: []
+ssh-askpass-gnome:
+  arch:
+  - openssh
+sshpass:
+  arch:
+  - sshpass
+svgpathtools-pip:
+  arch: []
+swi-prolog-java:
+  arch:
+  - swi-prolog
+swig:
+  arch:
+  - swig
+swig-wx:
+  arch: []
+tap-plugins:
+  arch:
+  - tap-plugins
+tbb:
+  arch:
+  - tbb
+terminator:
+  arch:
+  - terminator
+tesseract-ocr:
+  arch:
+  - tesseract
+texlive-full:
+  arch:
+  - texlive-full
+texmaker:
+  arch:
+  - texmaker
+tilestache:
+  arch: []
+tmux:
+  arch:
+  - tmux
+trang:
+  arch:
+  - trang
+tree:
+  arch:
+  - tree
+ttf-kochi-gothic:
+  arch: []
+ttf-kochi-mincho:
+  arch: []
+uavcan-pip:
+  arch: []
+udhcpc:
+  arch:
+  - mkinitcpio-busybox
+unclutter:
+  arch:
+  - unclutter
+uncrustify:
+  arch:
+  - uncrustify
+urdf2webots-pip:
+  arch: []
+usbutils:
+  arch:
+  - usbutils
+uvcdynctrl:
+  arch: []
+valgrind:
+  arch:
+  - valgrind
+vim:
+  arch:
+  - vim
+virtualenv:
+  arch:
+  - python-virtualenv
+  - python2-virtualenv
+vrep:
+  arch: []
+wireless-tools:
+  arch:
+  - wireless_tools
+workrave:
+  arch:
+  - workrave
+wxpython:
+  arch: []
+x11proto-dri2-dev:
+  arch:
+  - xorgproto
+x11proto-gl-dev:
+  arch:
+  - xorgproto
+x11proto-print-dev:
+  arch: []
+xfont-server:
+  arch: []
+xfonts-100dpi:
+  arch: []
+xfonts-75dpi:
+  arch: []
+zip:
+  arch:
+  - zip
