@@ -57,41 +57,77 @@ def list_aur_packages():
         return set([line.decode('utf-8').strip() for line in file.readlines()])
 
 
-def check_repology(pkgname: str):
-    # We could do this pretty stubborn if we want.
-    # Right now, it is assumed that the rosdep key is identical to the bionic name which is checked.
-    # We could check each linux distro for which we have a valid rosdep resolution.
-    #
-    # Most repology results need manual intervention because all packages from that project are returned.
-    # We could strip everything with -doc.
-    try:
-        url = 'https://repology.org/tools/project-by?repo=ubuntu_18_04&name_type=binname&target_page=api_v1_project&name={}'.format(pkgname)
-        with urllib.request.urlopen(url) as res:
-            data = json.loads(res.read())
-            repo_hits = [d for d in data if d['repo'] == 'arch']
+def check_repology(key, rosdep_mappings):
+    # Map rosdep os names to repology os identifiers
+    os_lut = {
+        'debian': {
+            '*': 'debian_stable',
+            'stretch': 'debian_oldstable',
+            'buster': 'debian_stable',
+        },
+        'ubuntu': {
+            '*': 'ubuntu_20_04',
+            'bionic': 'ubuntu_18_04',
+            'focal': 'ubuntu_20_04',
+            'trusty': 'ubuntu_14_04',
+            'xenial': 'ubuntu_16_04',
+        }
+    }
 
-            core_hits = [h['binname'] for h in repo_hits if h['subrepo'] == 'core']
-            if len(core_hits) > 0:
-                return core_hits
+    def filter_hits(hits):
+        hits = filter(lambda h: not h.endswith("-doc"), hits)
+        if key.startswith('python-'):
+            # When our key starts with python-, it's a python 2 package.
+            # So exclude arch linux python 3 packages, which also start with python-. Yikes.
+            hits = filter(lambda h: not h.startswith("python-"), hits)
+        elif key.startswith('python3-'):
+            hits = filter(lambda h: not h.startswith("python2-"), hits)
+        hits = filter(lambda h: not h.endswith("-git") and not h.endswith("-svn") and not h.endswith("-hg"), hits)
+        return hits
 
-            extra_hits = [h['binname'] for h in repo_hits if h['subrepo'] == 'extra']
-            if len(extra_hits) > 0:
-                return extra_hits
+    foreign_hits = {}
+    for os in rosdep_mappings:
+        if os in os_lut:
+            if type(rosdep_mappings[os]) is dict:
+                for osver in rosdep_mappings[os]:
+                    if osver in os_lut[os] and rosdep_mappings[os][osver] is not None:
+                        foreign_hits[os_lut[os][osver]] = rosdep_mappings[os][osver]
+            elif rosdep_mappings[os] is not None:
+                foreign_hits[os_lut[os]['*']] = rosdep_mappings[os]
 
-            community_hits = [h['binname'] for h in repo_hits if h['subrepo'] == 'community']
-            if len(community_hits) > 0:
-                return community_hits
+    for os in foreign_hits:
+        repo_hits = []
+        aur_hits = []
+        for pkgname in foreign_hits[os]:
+            try:
+                url = 'https://repology.org/tools/project-by?repo={}&name_type=binname&target_page=api_v1_project&name={}'.format(os, pkgname)
+                with urllib.request.urlopen(url) as res:
+                    data = json.loads(res.read())
 
-            aur_hits = [h['binname'] for h in repo_hits if h['repo'] == 'aur']
-            if len(aur_hits) > 0:
-                return aur_hits
+                repo_hits.extend([d for d in data if d['repo'] == 'arch'])
+                aur_hits.extend([d['binname'] for d in data if d['repo'] == 'aur'])
+            except:
+                continue
 
-            return []
-    except:
-        return []
+        core_hits = set([h['binname'] for h in repo_hits if h['subrepo'] == 'core'])
+        if len(core_hits) > 0:
+            return filter_hits(core_hits)
+
+        extra_hits = set([h['binname'] for h in repo_hits if h['subrepo'] == 'extra'])
+        if len(extra_hits) > 0:
+            return filter_hits(extra_hits)
+
+        community_hits = set([h['binname'] for h in repo_hits if h['subrepo'] == 'community'])
+        if len(community_hits) > 0:
+            return filter_hits(community_hits)
+
+        if len(aur_hits) > 0:
+            return filter_hits(set(aur_hits))
+
+    return []
 
 
-if __name__ == '__main__':
+def main():
     print("Loading pacman packages ...")
     official_packages = list_official_packages()
     print("{} pacman packages loaded.".format(len(official_packages)))
@@ -107,8 +143,10 @@ if __name__ == '__main__':
         with urllib.request.urlopen('https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/{}'.format(filename)) as res:
             rd_map = yaml.safe_load(res.read())
             for key in rd_map:
+
                 if 'arch' in rd_map[key]:
                     # Verify current rosdep keys
+                    # TODO: Fix false negatives for pip entries!
                     if all([p in official_packages for p in rd_map[key]['arch']]):
                         key_is_valid = True
                     elif all([p in aur_packages for p in rd_map[key]['arch']]):
@@ -127,7 +165,7 @@ if __name__ == '__main__':
                     else:
                         guess = key
 
-                    print("Looking for {} ...".format(key))
+                    print("Looking for key {} ...".format(key))
 
                     if guess in official_packages:
                         missing_keys[key] = {"arch": [guess]}
@@ -136,7 +174,7 @@ if __name__ == '__main__':
                         missing_keys[key] = {"arch": [guess]}
                         stats["aur"] += 1
                     else:
-                        pkgs = check_repology(key)
+                        pkgs = list(check_repology(key, rd_map[key]))
                         if len(pkgs) > 0:
                             missing_keys[key] = {"arch": pkgs}
                             stats["repology"] += 1
@@ -148,3 +186,10 @@ if __name__ == '__main__':
           .format(stats["official"], stats["aur"], stats["repology"], stats["n/a"]))
     with open('arch-with-aur.yaml', 'w') as out_file:
         yaml.dump(missing_keys, out_file)
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        pass
