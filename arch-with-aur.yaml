@@ -306,15 +306,15 @@ gringo:
   arch: []
 gstreamer0.10-gconf:
   arch:
+  - gst-plugin-gtk
   - gst-plugin-qmlgl
   - gst-plugins-good
-  - gst-plugin-gtk
 gstreamer0.10-pocketsphinx:
   arch: []
 gstreamer1.0-alsa:
   arch:
-  - gst-plugins-base-libs
   - gst-plugins-base
+  - gst-plugins-base-libs
 gstreamer1.0-rtsp:
   arch:
   - gst-rtsp-server
@@ -368,8 +368,8 @@ ipython:
   - ipython
 ipython3:
   arch:
-  - ipython2
   - ipython
+  - ipython2
 jq:
   arch:
   - jq
@@ -491,7 +491,6 @@ libceres-dev:
   - ceres-solver
 libcoin80-dev:
   arch:
-  - coin-docs
   - coin
 libconfig++-dev:
   arch: []
@@ -505,17 +504,16 @@ libcpprest-dev:
   - cpprestsdk
 libdbus-dev:
   arch:
-  - dbus-docs
   - dbus
 libdc1394-dev:
   arch:
   - libdc1394
 libdlib-dev:
   arch:
-  - python2-dlib
   - dlib
-  - python-dlib-cuda
   - python-dlib
+  - python-dlib-cuda
+  - python2-dlib
 libdpkg-dev:
   arch:
   - dpkg
@@ -534,18 +532,13 @@ libffi-dev:
   - libffi
 libfontconfig1-dev:
   arch:
-  - fontconfig-docs
   - fontconfig
 libfreetype6:
   arch:
-  - freetype2-docs
   - freetype2
-  - freetype2-demos
 libfreetype6-dev:
   arch:
-  - freetype2-docs
   - freetype2
-  - freetype2-demos
 libftdipp-dev:
   arch:
   - libftdi
@@ -575,14 +568,14 @@ libgmp:
   - gmp
 libgomp1:
   arch:
+  - gcc
   - gcc-ada
+  - gcc-d
   - gcc-fortran
   - gcc-go
   - gcc-libs
-  - lib32-gcc-libs
-  - gcc
-  - gcc-d
   - gcc-objc
+  - lib32-gcc-libs
 libgstrtspserver-1.0-0:
   arch:
   - gst-rtsp-server
@@ -678,9 +671,9 @@ libkdtree++-dev:
 liblapacke-dev:
   arch:
   - blas
-  - lapacke
-  - lapack
   - cblas
+  - lapack
+  - lapacke
 liblinear-dev:
   arch:
   - liblinear
@@ -707,9 +700,9 @@ libmodbus-dev:
   - libmodbus-dev
 libmodbus5:
   arch:
-  - libmodbus
   - lib32-libmodbus
   - lib32-libmodbus-dev
+  - libmodbus
   - libmodbus-dev
 libmongoc-1.0-0:
   arch:
@@ -745,8 +738,8 @@ libnotify:
   - libnotify
 libnss3-dev:
   arch:
-  - nss
   - ca-certificates-mozilla
+  - nss
 libopal-dev:
   arch: []
 libopenblas-dev:
@@ -770,14 +763,14 @@ liborocos-bfl-dev:
   - orocos-bfl
 liborocos-kdl:
   arch:
-  - orocos-kdl-python2
   - orocos-kdl
   - orocos-kdl-python
+  - orocos-kdl-python2
 liborocos-kdl-dev:
   arch:
-  - orocos-kdl-python2
   - orocos-kdl
   - orocos-kdl-python
+  - orocos-kdl-python2
 libpcap:
   arch:
   - libpcap
@@ -808,12 +801,12 @@ libpt-dev:
 libpulse-dev:
   arch:
   - libpulse
-  - pulseaudio-zeroconf
-  - pulseaudio-lirc
   - pulseaudio
-  - pulseaudio-equalizer
   - pulseaudio-bluetooth
+  - pulseaudio-equalizer
   - pulseaudio-jack
+  - pulseaudio-lirc
+  - pulseaudio-zeroconf
 libqcustomplot-dev:
   arch:
   - qcustomplot
@@ -836,194 +829,194 @@ libqt5-gstreamer-dev:
   - qt-gstreamer
 libqt5-multimedia:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 libqt5-qml:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 libqt5-quick:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 libqt5-svg-dev:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 libqt5-xml:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 librabbitmq-dev:
   arch: []
 libraw1394:
@@ -1055,7 +1048,6 @@ libsrtp0-dev:
 libssh-dev:
   arch:
   - libssh
-  - libssh-docs
 libsvm-dev:
   arch:
   - libsvm
@@ -1067,8 +1059,8 @@ libsvn-dev:
   - subversion
 libsystemd-dev:
   arch:
-  - systemd-libs
   - systemd
+  - systemd-libs
   - systemd-resolvconf
   - systemd-sysvcompat
 libtesseract:
@@ -1158,8 +1150,7 @@ mercurial:
   arch:
   - mercurial
 mesa-utils:
-  arch:
-  - mesa-demos
+  arch: []
 mkdocs:
   arch:
   - mkdocs
@@ -1278,8 +1269,8 @@ pigz:
   - pigz
 pika:
   arch:
-  - python2-pika
   - python-pika
+  - python2-pika
 pmount:
   arch:
   - pmount
@@ -1291,9 +1282,9 @@ polyclipping-dev:
   - polyclipping
 poppler-utils:
   arch:
+  - poppler
   - poppler-glib
   - poppler-qt5
-  - poppler
 portaudio19-dev:
   arch:
   - portaudio
@@ -1435,9 +1426,6 @@ python-bs4:
   - python2-bs4
 python-bson:
   arch: []
-python-can:
-  arch:
-  - python2-can
 python-cantools-pip:
   arch: []
 python-catkin-lint:
@@ -1659,8 +1647,8 @@ python-grpc-tools:
   arch: []
 python-grpcio:
   arch:
-  - grpc-cli
   - grpc
+  - grpc-cli
   - php-grpc
 python-grpcio-testing-pip:
   arch: []
@@ -1926,9 +1914,6 @@ python-pynmea2:
   - python2-pynmea2
 python-pypcd-pip:
   arch: []
-python-pypng:
-  arch:
-  - python2-pypng
 python-pypozyx-pip:
   arch: []
 python-pyproj:
@@ -1974,12 +1959,12 @@ python-qrencode:
   arch: []
 python-qt-bindings-webkit:
   arch:
-  - python2-pyqt4
   - pyqt4-common
+  - python2-pyqt4
 python-qt4-gl:
   arch:
-  - python2-pyqt4
   - pyqt4-common
+  - python2-pyqt4
 python-qt5-bindings-qsci:
   arch:
   - qscintilla-qt5
@@ -2053,9 +2038,9 @@ python-singledispatch:
   - python2-singledispatch
 python-sip4:
   arch:
-  - sip5
-  - sip
   - python2-sip-pyqt5
+  - sip
+  - sip5
 python-skimage:
   arch: []
 python-skimage-pip:
@@ -2244,6 +2229,8 @@ python-xlrd:
   arch: []
 python-xmltodict:
   arch: []
+python-yamale-pip:
+  arch: []
 python-zbar:
   arch:
   - python2-zbar
@@ -2276,6 +2263,9 @@ python3-catkin-pkg:
   arch: []
 python3-catkin-pkg-modules:
   arch: []
+python3-cherrypy3:
+  arch:
+  - python-cherrypy
 python3-click:
   arch:
   - python-click
@@ -2283,6 +2273,9 @@ python3-collada:
   arch: []
 python3-collada-pip:
   arch: []
+python3-colorama:
+  arch:
+  - python-colorama
 python3-coverage:
   arch:
   - python-coverage
@@ -2323,6 +2316,8 @@ python3-flake8:
 python3-future:
   arch:
   - python-future
+python3-github:
+  arch: []
 python3-gitlab:
   arch:
   - python-gitlab
@@ -2354,6 +2349,9 @@ python3-lttng:
 python3-lxml:
   arch:
   - python-lxml
+python3-mapnik:
+  arch:
+  - python-mapnik
 python3-markdown:
   arch:
   - python-markdown
@@ -2421,9 +2419,9 @@ python3-pygraphviz:
   - python-pygraphviz
 python3-pykdl:
   arch:
-  - orocos-kdl-python2
   - orocos-kdl
   - orocos-kdl-python
+  - orocos-kdl-python2
 python3-pyqt5.qtwebengine:
   arch:
   - python-pyqt5
@@ -2497,6 +2495,9 @@ python3-tensorboardX-pip:
 python3-termcolor:
   arch:
   - python-termcolor
+python3-texttable:
+  arch:
+  - python-texttable
 python3-tilestache-pip:
   arch: []
 python3-tk:
@@ -2528,386 +2529,386 @@ qdarkstyle-pip:
       - qdarkstyle
 qml-module-qtmultimedia:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 qml-module-qtquick-controls:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 qml-module-qtquick-controls2:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 qml-module-qtquick-dialogs:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 qml-module-qtquick-layouts:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 qml-module-qtquick-templates2:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 qml-module-qtquick2:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 qtbase5-private-dev:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 qtmobility-dev:
   arch: []
 qttools5-dev:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 qttools5-dev-tools:
   arch:
-  - qt5-quickcontrols
-  - qt5-webview
-  - qt5-graphicaleffects
-  - qt5-websockets
-  - qt5-x11extras
-  - qt5-virtualkeyboard
-  - qt5-datavis3d
-  - qt5-quickcontrols2
-  - qt5-webglplugin
-  - qt5-webengine
-  - qt5-base
-  - qt5-translations
-  - qt5-gamepad
-  - qt5-purchasing
-  - qt5-wayland
   - qt5-3d
-  - qt5-webchannel
-  - qt5-remoteobjects
-  - qt5-location
-  - qt5-svg
-  - qt5-speech
-  - qt5-declarative
-  - qt5-serialbus
-  - qt5-sensors
-  - qt5-imageformats
-  - qt5-serialport
-  - qt5-script
-  - qt5-networkauth
-  - qt5-tools
+  - qt5-base
   - qt5-charts
-  - qt5-xcb-private-headers
-  - qt5-scxml
-  - qt5-examples
-  - qt5-xmlpatterns
   - qt5-connectivity
+  - qt5-datavis3d
+  - qt5-declarative
+  - qt5-examples
+  - qt5-gamepad
+  - qt5-graphicaleffects
+  - qt5-imageformats
+  - qt5-location
   - qt5-multimedia
+  - qt5-networkauth
+  - qt5-purchasing
+  - qt5-quickcontrols
+  - qt5-quickcontrols2
+  - qt5-remoteobjects
+  - qt5-script
+  - qt5-scxml
+  - qt5-sensors
+  - qt5-serialbus
+  - qt5-serialport
+  - qt5-speech
+  - qt5-svg
+  - qt5-tools
+  - qt5-translations
+  - qt5-virtualkeyboard
+  - qt5-wayland
+  - qt5-webchannel
+  - qt5-webengine
+  - qt5-webglplugin
+  - qt5-websockets
+  - qt5-webview
+  - qt5-x11extras
+  - qt5-xcb-private-headers
+  - qt5-xmlpatterns
 quadprog-pip:
   arch:
     pip:
@@ -3071,8 +3072,8 @@ vim:
   - vim
 virtualenv:
   arch:
-  - python2-virtualenv
   - python-virtualenv
+  - python2-virtualenv
 vrep:
   arch: []
 wireless-tools:
