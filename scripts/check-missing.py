@@ -112,7 +112,9 @@ def check_repology(key, rosdep_mappings):
 
                 repo_hits.extend([d for d in data if d['repo'] == 'arch'])
                 aur_hits.extend([d['binname'] for d in data if d['repo'] == 'aur'])
-            except:
+            except urllib.request.URLError:
+                continue
+            except yaml.YAMLError:
                 continue
 
         core_hits = set([h['binname'] for h in repo_hits if h['subrepo'] == 'core'])
