@@ -5,13 +5,25 @@ acpitool:
   arch:
   - acpitool
 adafruit-ads1x15-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - adafruit-ads1x15
 adafruit-gpio-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - adafruit-gpio
 adafruit-mcp3008-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - adafruit-mcp3008
 adafruit-pca9685-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - adafruit-pca9685
 antlr:
   arch:
   - antlr2
@@ -27,17 +39,32 @@ arista:
   arch:
   - arista
 autograd-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - autograd
 autolab-core-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - autolab-core
 autolab-perception-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - autolab-perception
 autolab-visualization-pip:
   arch: []
 awsiotpythonsdk-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - awsiotpythonsdk
 azure-iothub-device-client-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - azure-iothub-device-client
 babeltrace:
   arch:
   - babeltrace
@@ -51,11 +78,20 @@ can-utils:
   arch:
   - can-utils
 canopen-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - canopen
 carla-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - carla
 casadi-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - casadi
 cccc:
   arch:
   - cccc
@@ -76,7 +112,10 @@ clang-format:
 clang-tidy:
   arch: []
 cmakelint-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - cmakelint
 coinor-libcbc-dev:
   arch:
   - coin-or-cbc
@@ -110,7 +149,10 @@ cppad:
   arch:
   - cppad
 cppcheck-junit-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - cppcheck-junit
 crypto++:
   arch:
   - crypto++
@@ -144,12 +186,18 @@ docker.io:
   arch:
   - docker
 dpath-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - dpath
 dpkg-dev:
   arch:
   - dpkg
 ds4drv-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - ds4drv
 eclipse:
   arch: []
 ed:
@@ -170,7 +218,10 @@ espeak:
 exfat-fuse:
   arch: []
 exhale-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - exhale
 fakeroot:
   arch:
   - fakeroot
@@ -274,7 +325,10 @@ gunicorn:
   arch:
   - gunicorn
 gym-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - gym
 hdf5-tools:
   arch:
   - hdf5
@@ -294,9 +348,15 @@ ignition-tools:
   arch:
   - ignition-tools
 imgaug-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - imgaug
 intelhex-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - intelhex
 iperf:
   arch:
   - iperf
@@ -1175,7 +1235,10 @@ odb:
   arch:
   - odb
 opcua-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - opcua
 openjdk-6-jdk:
   arch: []
 openmpi:
@@ -1206,7 +1269,10 @@ phantomjs:
   arch:
   - phantomjs
 pi-ina219-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - pi-ina219
 pigz:
   arch:
   - pigz
@@ -1261,28 +1327,49 @@ pydocstyle:
   arch:
   - python-pydocstyle
 pydrive-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - pydrive
 pyflakes3:
   arch: []
 pymap3d-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - pymap3d
 pymodbustcp-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - pymodbustcp
 pynput-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - pynput
 pyosmium:
   arch:
   - pyosmium
 pyper-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - pyper
 pyqt5-dev-tools:
   arch:
   - python-pyqt5
   - python2-pyqt5
 pyrebase-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - pyrebase
 pyros-setup-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - pyros-setup
 pyside-tools:
   arch: []
 python-adafruit-bno055-pip:
@@ -1316,8 +1403,6 @@ python-autobahn:
 python-babel:
   arch:
   - python2-babel
-python-backoff-pip:
-  arch: []
 python-backports.ssl-match-hostname:
   arch: []
 python-bitarray:
@@ -1407,8 +1492,6 @@ python-crccheck-pip:
 python-cryptography:
   arch:
   - python2-cryptography
-python-cython-pip:
-  arch: []
 python-datadog-pip:
   arch: []
 python-deap-pip:
@@ -1421,8 +1504,6 @@ python-deepdiff-pip:
 python-defer-pip:
   arch: []
 python-dev:
-  arch: []
-python-dialogflow-pip:
   arch: []
 python-django:
   arch: []
@@ -1473,7 +1554,10 @@ python-falcon:
 python-fastdtw-pip:
   arch: []
 python-fcl-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - python-fcl
 python-fcn-pip:
   arch: []
 python-filterpy-pip:
@@ -1522,7 +1606,10 @@ python-genshi:
   arch:
   - python2-genshi
 python-geocoder-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - python-geocoder
 python-geographiclib:
   arch:
   - geographiclib
@@ -1537,7 +1624,10 @@ python-gi-cairo:
   - pygobject-devel
   - python2-gobject
 python-github-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - python-github
 python-gitlab:
   arch: []
 python-gitpython-pip:
@@ -1657,7 +1747,10 @@ python-lttngust:
 python-luis-pip:
   arch: []
 python-lzf-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - python-lzf
 python-mahotas:
   arch:
   - python2-mahotas
@@ -1674,13 +1767,9 @@ python-marshmallow:
   arch: []
 python-math3d-pip:
   arch: []
-python-more-itertools-pip:
-  arch: []
 python-moviepy-pip:
   arch: []
 python-multicast:
-  arch: []
-python-multiprocess-pip:
   arch: []
 python-mysqldb:
   arch: []
@@ -1749,7 +1838,10 @@ python-pep8:
 python-percol:
   arch: []
 python-periphery-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - python-periphery
 python-persist-queue-pip:
   arch: []
 python-pixel-ring-pip:
@@ -1903,7 +1995,10 @@ python-readchar-pip:
 python-redis:
   arch: []
 python-redis-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - python-redis
 python-requests:
   arch:
   - python2-requests
@@ -1938,8 +2033,6 @@ python-schedule:
 python-scp:
   arch: []
 python-seaborn:
-  arch: []
-python-selectors2-pip:
   arch: []
 python-selenium-pip:
   arch: []
@@ -2094,7 +2187,10 @@ python-virtualenv:
 python-visual:
   arch: []
 python-vlc-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - python-vlc
 python-voluptuous:
   arch: []
 python-w1thermsensor-pip:
@@ -2102,7 +2198,10 @@ python-w1thermsensor-pip:
 python-waitress:
   arch: []
 python-walrus-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - python-walrus
 python-watchdog:
   arch: []
 python-webob:
@@ -2160,8 +2259,6 @@ python3-autobahn:
 python3-babeltrace:
   arch:
   - python-babeltrace
-python3-backoff-pip:
-  arch: []
 python3-bokeh-pip:
   arch: []
 python3-boto3:
@@ -2425,7 +2522,10 @@ python3-yaml:
   arch:
   - python-yaml
 qdarkstyle-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - qdarkstyle
 qml-module-qtmultimedia:
   arch:
   - qt5-quickcontrols
@@ -2809,7 +2909,10 @@ qttools5-dev-tools:
   - qt5-connectivity
   - qt5-multimedia
 quadprog-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - quadprog
 r-base:
   arch:
   - r
@@ -2825,7 +2928,10 @@ rapidjson-dev:
 robotino-api2:
   arch: []
 rosbag-metadata-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - rosbag-metadata
 rosemacs-el:
   arch: []
 rsyslog:
@@ -2875,7 +2981,10 @@ speex:
   arch:
   - speex
 sphinxcontrib-bibtex-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - sphinxcontrib-bibtex
 ssh-askpass:
   arch: []
 ssh-askpass-gnome:
@@ -2885,7 +2994,10 @@ sshpass:
   arch:
   - sshpass
 svgpathtools-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - svgpathtools
 swi-prolog-java:
   arch:
   - swi-prolog
@@ -2928,7 +3040,10 @@ ttf-kochi-gothic:
 ttf-kochi-mincho:
   arch: []
 uavcan-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - uavcan
 udhcpc:
   arch:
   - mkinitcpio-busybox
@@ -2939,7 +3054,10 @@ uncrustify:
   arch:
   - uncrustify
 urdf2webots-pip:
-  arch: []
+  arch:
+    pip:
+      packages:
+      - urdf2webots
 usbutils:
   arch:
   - usbutils
