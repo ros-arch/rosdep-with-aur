@@ -25,6 +25,7 @@ import gzip
 import io
 import json
 import tarfile
+import urllib.error
 import urllib.request
 
 import yaml
@@ -79,7 +80,7 @@ def load_rosdep_file(filename):
         try:
             with urllib.request.urlopen(filename) as res:
                 return yaml.safe_load(res.read())
-        except urllib.request.URLError:
+        except urllib.error.URLError:
             return dict()
         except yaml.YAMLError:
             return dict()
@@ -154,7 +155,7 @@ def check_repology(key, rosdep_mappings):
                 repo_hits.extend([d for d in data if d['repo'] == 'arch'])
                 aur_hits.extend(
                     [d['binname'] for d in data if d['repo'] == 'aur'])
-            except urllib.request.URLError:
+            except urllib.error.URLError:
                 continue
             except yaml.YAMLError:
                 continue
