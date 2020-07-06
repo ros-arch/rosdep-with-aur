@@ -298,13 +298,13 @@ def main():
     def add_definition(key, pkgs, pkg_manager=None):
         if pkg_manager is None:
             new_keys[key] = {
-                'arch': pkgs
+                'arch': sorted(pkgs)
             }
         else:
             new_keys[key] = {
                 'arch': {
                     pkg_manager: {
-                        'packages': pkgs
+                        'packages': sorted(pkgs)
                     }
                 }
             }
