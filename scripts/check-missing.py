@@ -21,12 +21,14 @@
 # SOFTWARE.
 
 
-import yaml
+import gzip
+import io
+import json
 import tarfile
 import urllib.request
-import io
-import gzip
-import json
+
+import yaml
+from lxml import etree
 
 
 ROSDEP_YAML_FILE = "arch-with-aur.yaml"
@@ -60,6 +62,35 @@ def list_aur_packages():
         stream = io.BytesIO(res.read())
         file = gzip.GzipFile(fileobj=stream)
         return set([line.decode('utf-8').strip() for line in file.readlines()])
+
+
+def list_pip_packages():
+    pkgs = set()
+    with urllib.request.urlopen('https://pypi.org/simple/') as res:
+        htmlroot = etree.fromstring(res.read())
+        for child in htmlroot.findall('.//a'):
+            pkgs.add(child.attrib['href'].split('/')[2])
+    return pkgs
+
+
+def load_rosdep_file(filename):
+    print("Loading rosdep definitions from {} ...".format(filename))
+    if '://' in filename:
+        try:
+            with urllib.request.urlopen(filename) as res:
+                return yaml.safe_load(res.read())
+        except urllib.request.URLError:
+            return dict()
+        except yaml.YAMLError:
+            return dict()
+    else:
+        try:
+            with open(filename) as fstream:
+                return yaml.safe_load(fstream.read())
+        except OSError:
+            return dict()
+        except yaml.YAMLError:
+            return dict()
 
 
 def check_repology(key, rosdep_mappings):
@@ -149,6 +180,89 @@ def check_repology(key, rosdep_mappings):
     return []
 
 
+def rosdep_lookup(yaml_data, key, os='arch', os_version=None,
+                  pkg_manager=None):
+    """
+    How rosdep yaml files work (Yikes):
+
+    1. Default pkg_manager, all os versions
+    <rosdep_name>:
+        <os_name>: [...]
+
+    2. Default pkg_manager, specific os version
+    <rosdep_name>:
+        <os_name>:
+            <os_version>: [...]
+
+    3. Explicit pkg_manager, all os versions (REP 111)
+    <rosdep_name>:
+        <os_name>:
+            <pkg_manager>:
+                packages: [...]
+
+    4. Explicit pkg_manager, specific os version (REP 111)
+    <rosdep_name>:
+        <os_name>:
+            <os_version>:
+                <pkg_manager>:
+                    packages: [...]
+
+    """
+    if pkg_manager is None:
+        try:
+            pkgs = yaml_data[key][os]
+            if type(pkgs) is list:
+                return pkgs
+        except KeyError:
+            pass
+
+        if os_version is not None:
+            try:
+                pkgs = yaml_data[key][os][os_version]
+                if type(pkgs) is list:
+                    return pkgs
+            except KeyError:
+                pass
+
+        try:
+            pkgs = yaml_data[key][os]['*']
+            if type(pkgs) is list:
+                return pkgs
+        except KeyError:
+            pass
+
+    else:
+        try:
+            pkgs = yaml_data[key][os][pkg_manager]['packages']
+            if type(pkgs) is list:
+                return pkgs
+        except KeyError:
+            pass
+        except TypeError:
+            pass
+
+        if os_version is not None:
+            try:
+                pkgs = yaml_data[key][os][os_version][pkg_manager]['packages']
+                if type(pkgs) is list:
+                    return pkgs
+            except KeyError:
+                pass
+            except TypeError:
+                pass
+
+        try:
+            pkgs = yaml_data[key][os]['*'][pkg_manager]['packages']
+            if type(pkgs) is list:
+                return pkgs
+        except KeyError:
+            pass
+        except TypeError:
+            pass
+
+    return []
+
+
 def main():
     print("Loading pacman packages ...")
     official_packages = list_official_packages()
@@ -158,93 +272,118 @@ def main():
     aur_packages = list_aur_packages()
     print("{} AUR packages loaded.".format(len(aur_packages)))
 
-    try:
-        print("Loading previous rosdep definitions ...")
-        with open(ROSDEP_YAML_FILE) as prev_rosdep:
-            previous_defs = yaml.safe_load(prev_rosdep.read())
-        print("Previous definitions loaded.")
-    except OSError:
-        previous_defs = dict()
-    except yaml.YAMLError:
-        previous_defs = dict()
+    print("Loading PyPI packages ...")
+    pip_packages = list_pip_packages()
+    print("{} PyPI packages loaded".format(len(pip_packages)))
 
-    def lookup_previous_defs(key):
-        if key in previous_defs:
-            if 'arch' in previous_defs[key]:
-                if type(previous_defs[key]['arch']) is list:
-                    return previous_defs[key]['arch']
-        return []
+    previous_defs = load_rosdep_file(ROSDEP_YAML_FILE)
 
     def do_all_pkgs_exist(pkgs):
         return all([p in official_packages | aur_packages for p in pkgs])
 
+    def do_all_pip_pkgs_exist(pkgs):
+        return all([p in pip_packages for p in pkgs])
+
     stats = {
         "official": 0,
         "aur": 0,
+        "pip": 0,
         "repology": 0,
         "skipped": 0,
         "n/a": 0
     }
+
     new_keys = dict()
+
+    def add_definition(key, pkgs, pkg_manager=None):
+        if pkg_manager is None:
+            new_keys[key] = {
+                'arch': pkgs
+            }
+        else:
+            new_keys[key] = {
+                'arch': {
+                    pkg_manager: {
+                        'packages': pkgs
+                    }
+                }
+            }
+
     for filename in ["base.yaml", "python.yaml"]:
-        print("Loading {} ...".format(filename))
         url = 'https://raw.githubusercontent.com/ros/rosdistro/master/' \
               'rosdep/{}'.format(filename)
-        with urllib.request.urlopen(url) as res:
-            rd_map = yaml.safe_load(res.read())
-            for key in rd_map:
+        official_rosdep_defs = load_rosdep_file(url)
 
-                current_defs = lookup_previous_defs(key)
-                # Keep current definitions if they are okay
-                if len(current_defs) > 0 and do_all_pkgs_exist(current_defs):
-                    new_keys[key] = {"arch": current_defs}
-                    stats["skipped"] += 1
+        for key in official_rosdep_defs:
+            # Keep current definitions if they are okay
+            # Add current definitions to output file
+            current_hits = rosdep_lookup(previous_defs, key)
+            if len(current_hits) > 0 and do_all_pkgs_exist(current_hits):
+                add_definition(key, current_hits)
+                stats["skipped"] += 1
+                continue
+
+            current_pip_hits = rosdep_lookup(previous_defs, key,
+                                             pkg_manager='pip')
+            if len(current_pip_hits) > 0\
+                    and do_all_pip_pkgs_exist(current_pip_hits):
+                add_definition(key, current_pip_hits, pkg_manager='pip')
+                stats["skipped"] += 1
+                continue
+
+            # Lookup official definitions
+            # Do not add official definitions to output file
+            official_hits = rosdep_lookup(official_rosdep_defs, key)
+            if len(official_hits) > 0 and do_all_pkgs_exist(official_hits):
+                stats["skipped"] += 1
+                continue
+
+            official_pip_hits = rosdep_lookup(official_rosdep_defs, key,
+                                              pkg_manager='pip')
+            if len(official_pip_hits) > 0\
+                    and do_all_pip_pkgs_exist(official_pip_hits):
+                stats["skipped"] += 1
+                continue
+
+            print("Looking for key {} ...".format(key))
+
+            # To make a qualified guess, translate python package prefixes.
+            if key.startswith('python-'):
+                guess = key.replace('python', 'python2', 1)
+            elif key.startswith('python3-'):
+                guess = key.replace('python3', 'python', 1)
+            else:
+                guess = key
+
+            if guess in official_packages:
+                add_definition(key, [guess])
+                stats["official"] += 1
+                continue
+            if guess in aur_packages:
+                add_definition(key, [guess])
+                stats["aur"] += 1
+                continue
+            if key.endswith("-pip"):
+                # Guess pip packages after official/AUR packages to catch
+                # python-pip and python2-pip.
+                guess = key[:-4]
+                if guess in pip_packages:
+                    add_definition(key, [guess], pkg_manager='pip')
+                    stats['pip'] += 1
                     continue
+            pkgs = list(check_repology(key, official_rosdep_defs[key]))
+            if len(pkgs) > 0:
+                add_definition(key, pkgs)
+                stats["repology"] += 1
+                continue
 
-                # Lookup official definitions
-                if 'arch' in rd_map[key]:
-                    if type(rd_map[key]['arch']) is list:
-                        current_defs = rd_map[key]['arch']
-                    # TODO: the type might be dict, in this case, there might
-                    # be a different package manager available.
-                else:
-                    current_defs = []
+            add_definition(key, [])
+            stats["n/a"] += 1
 
-                # Skipp current key if official definitions are okay
-                if len(current_defs) > 0 and do_all_pkgs_exist(current_defs):
-                    stats["skipped"] += 1
-                    continue
-
-                # To make a qualified guess, translate package prefixes for
-                # python.
-                if key.startswith('python-'):
-                    guess = key.replace('python', 'python2', 1)
-                elif key.startswith('python3-'):
-                    guess = key.replace('python3', 'python', 1)
-                else:
-                    guess = key
-
-                print("Looking for key {} ...".format(key))
-
-                if guess in official_packages:
-                    new_keys[key] = {"arch": [guess]}
-                    stats["official"] += 1
-                elif guess in aur_packages:
-                    new_keys[key] = {"arch": [guess]}
-                    stats["aur"] += 1
-                else:
-                    pkgs = list(check_repology(key, rd_map[key]))
-                    if len(pkgs) > 0:
-                        new_keys[key] = {"arch": pkgs}
-                        stats["repology"] += 1
-                    else:
-                        new_keys[key] = {"arch": []}
-                        stats["n/a"] += 1
-
-    print("Stats: {} in official repositories, {} in AUR, {} found via "
-          "repology, {} skipped, {} not found."
-          .format(stats["official"], stats["aur"], stats["repology"],
-                  stats["skipped"], stats["n/a"]))
+    print("Stats: {} in official repositories, {} in AUR, {} on PyPI, "
+          "{} found via repology, {} skipped, {} not found."
+          .format(stats["official"], stats["aur"], stats["pip"],
+                  stats["repology"], stats["skipped"], stats["n/a"]))
     with open(ROSDEP_YAML_FILE, 'w') as out_file:
         yaml.safe_dump(new_keys, out_file)
 
