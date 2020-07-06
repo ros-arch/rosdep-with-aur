@@ -9,8 +9,8 @@
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,7 +35,8 @@ ROSDEP_YAML_FILE = "arch-with-aur.yaml"
 def list_official_packages():
     pkgs = []
     for repo in ['core', 'extra', 'community']:
-        with tarfile.open('/var/lib/pacman/sync/{}.db'.format(repo), mode='r:gz') as db:
+        with tarfile.open('/var/lib/pacman/sync/{}.db'.format(repo),
+                          mode='r:gz') as db:
             for m in db.getmembers():
                 if m.isfile():
                     next_line_has_name = False
@@ -54,7 +55,8 @@ def list_official_packages():
 
 
 def list_aur_packages():
-    with urllib.request.urlopen('https://aur.archlinux.org/packages.gz') as res:
+    with urllib.request.urlopen('https://aur.archlinux.org/packages.gz')\
+            as res:
         stream = io.BytesIO(res.read())
         file = gzip.GzipFile(fileobj=stream)
         return set([line.decode('utf-8').strip() for line in file.readlines()])
@@ -88,7 +90,8 @@ def check_repology(key, rosdep_mappings):
 
         if key.startswith('python-'):
             # When our key starts with python-, it's a python 2 package.
-            # So exclude arch linux python 3 packages, which also start with python-. Yikes.
+            # So exclude arch linux python 3 packages, which also start
+            # with python-. Yikes.
             hits = filter(lambda h: not h.startswith("python-"), hits)
         elif key.startswith('python3-'):
             hits = filter(lambda h: not h.startswith("python2-"), hits)
@@ -99,8 +102,10 @@ def check_repology(key, rosdep_mappings):
         if os in os_lut:
             if type(rosdep_mappings[os]) is dict:
                 for osver in rosdep_mappings[os]:
-                    if osver in os_lut[os] and rosdep_mappings[os][osver] is not None:
-                        foreign_hits[os_lut[os][osver]] = rosdep_mappings[os][osver]
+                    if osver in os_lut[os]:
+                        hits = rosdep_mappings[os][osver]
+                        if type(hits) is list:
+                            foreign_hits[os_lut[os][osver]] = hits
             elif rosdep_mappings[os] is not None:
                 foreign_hits[os_lut[os]['*']] = rosdep_mappings[os]
 
@@ -109,26 +114,32 @@ def check_repology(key, rosdep_mappings):
         aur_hits = []
         for pkgname in foreign_hits[os]:
             try:
-                url = 'https://repology.org/tools/project-by?repo={}&name_type=binname&target_page=api_v1_project&name={}'.format(os, pkgname)
+                url = 'https://repology.org/tools/project-by?repo={}'\
+                      '&name_type=binname&target_page=api_v1_project&name={}'\
+                    .format(os, pkgname)
                 with urllib.request.urlopen(url) as res:
                     data = json.loads(res.read())
 
                 repo_hits.extend([d for d in data if d['repo'] == 'arch'])
-                aur_hits.extend([d['binname'] for d in data if d['repo'] == 'aur'])
+                aur_hits.extend(
+                    [d['binname'] for d in data if d['repo'] == 'aur'])
             except urllib.request.URLError:
                 continue
             except yaml.YAMLError:
                 continue
 
-        core_hits = set([h['binname'] for h in repo_hits if h['subrepo'] == 'core'])
+        core_hits = set(
+            [h['binname'] for h in repo_hits if h['subrepo'] == 'core'])
         if len(core_hits) > 0:
             return filter_hits(core_hits)
 
-        extra_hits = set([h['binname'] for h in repo_hits if h['subrepo'] == 'extra'])
+        extra_hits = set(
+            [h['binname'] for h in repo_hits if h['subrepo'] == 'extra'])
         if len(extra_hits) > 0:
             return filter_hits(extra_hits)
 
-        community_hits = set([h['binname'] for h in repo_hits if h['subrepo'] == 'community'])
+        community_hits = set(
+            [h['binname'] for h in repo_hits if h['subrepo'] == 'community'])
         if len(community_hits) > 0:
             return filter_hits(community_hits)
 
