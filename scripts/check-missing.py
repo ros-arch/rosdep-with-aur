@@ -76,13 +76,19 @@ def check_repology(key, rosdep_mappings):
 
     def filter_hits(hits):
         hits = filter(lambda h: not h.endswith("-doc"), hits)
+        hits = filter(lambda h: not h.endswith("-docs"), hits)
+        hits = filter(lambda h: not h.endswith("-demos"), hits)
+
+        hits = filter(lambda h: not h.endswith("-git"), hits)
+        hits = filter(lambda h: not h.endswith("-svn"), hits)
+        hits = filter(lambda h: not h.endswith("-hg"), hits)
+
         if key.startswith('python-'):
             # When our key starts with python-, it's a python 2 package.
             # So exclude arch linux python 3 packages, which also start with python-. Yikes.
             hits = filter(lambda h: not h.startswith("python-"), hits)
         elif key.startswith('python3-'):
             hits = filter(lambda h: not h.startswith("python2-"), hits)
-        hits = filter(lambda h: not h.endswith("-git") and not h.endswith("-svn") and not h.endswith("-hg"), hits)
         return hits
 
     foreign_hits = {}
