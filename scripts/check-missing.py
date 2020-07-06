@@ -29,6 +29,9 @@ import gzip
 import json
 
 
+ROSDEP_YAML_FILE = "arch-with-aur.yaml"
+
+
 def list_official_packages():
     pkgs = []
     for repo in ['core', 'extra', 'community']:
@@ -144,56 +147,95 @@ def main():
     aur_packages = list_aur_packages()
     print("{} AUR packages loaded.".format(len(aur_packages)))
 
-    stats = {"official": 0, "aur": 0, "repology": 0, "n/a": 0}
-    missing_keys = dict()
+    try:
+        print("Loading previous rosdep definitions ...")
+        with open(ROSDEP_YAML_FILE) as prev_rosdep:
+            previous_defs = yaml.safe_load(prev_rosdep.read())
+        print("Previous definitions loaded.")
+    except OSError:
+        previous_defs = dict()
+    except yaml.YAMLError:
+        previous_defs = dict()
+
+    def lookup_previous_defs(key):
+        if key in previous_defs:
+            if 'arch' in previous_defs[key]:
+                if type(previous_defs[key]['arch']) is list:
+                    return previous_defs[key]['arch']
+        return []
+
+    def do_all_pkgs_exist(pkgs):
+        return all([p in official_packages | aur_packages for p in pkgs])
+
+    stats = {
+        "official": 0,
+        "aur": 0,
+        "repology": 0,
+        "skipped": 0,
+        "n/a": 0
+    }
+    new_keys = dict()
     for filename in ["base.yaml", "python.yaml"]:
         print("Loading {} ...".format(filename))
-        with urllib.request.urlopen('https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/{}'.format(filename)) as res:
+        url = 'https://raw.githubusercontent.com/ros/rosdistro/master/' \
+              'rosdep/{}'.format(filename)
+        with urllib.request.urlopen(url) as res:
             rd_map = yaml.safe_load(res.read())
             for key in rd_map:
 
+                current_defs = lookup_previous_defs(key)
+                # Keep current definitions if they are okay
+                if len(current_defs) > 0 and do_all_pkgs_exist(current_defs):
+                    new_keys[key] = {"arch": current_defs}
+                    stats["skipped"] += 1
+                    continue
+
+                # Lookup official definitions
                 if 'arch' in rd_map[key]:
-                    # Verify current rosdep keys
-                    # TODO: Fix false negatives for pip entries!
-                    if all([p in official_packages for p in rd_map[key]['arch']]):
-                        key_is_valid = True
-                    elif all([p in aur_packages for p in rd_map[key]['arch']]):
-                        key_is_valid = True
-                    else:
-                        print("Invalid rosdep key: {}: [{}]".format(key, ', '.join(rd_map[key]['arch'])))
-                        key_is_valid = False
+                    if type(rd_map[key]['arch']) is list:
+                        current_defs = rd_map[key]['arch']
+                    # TODO: the type might be dict, in this case, there might
+                    # be a different package manager available.
                 else:
-                    key_is_valid = False
+                    current_defs = []
 
-                if not key_is_valid:
-                    if key.startswith('python-'):
-                        guess = key.replace('python', 'python2', 1)
-                    elif key.startswith('python3-'):
-                        guess = key.replace('python3', 'python', 1)
+                # Skipp current key if official definitions are okay
+                if len(current_defs) > 0 and do_all_pkgs_exist(current_defs):
+                    stats["skipped"] += 1
+                    continue
+
+                # To make a qualified guess, translate package prefixes for
+                # python.
+                if key.startswith('python-'):
+                    guess = key.replace('python', 'python2', 1)
+                elif key.startswith('python3-'):
+                    guess = key.replace('python3', 'python', 1)
+                else:
+                    guess = key
+
+                print("Looking for key {} ...".format(key))
+
+                if guess in official_packages:
+                    new_keys[key] = {"arch": [guess]}
+                    stats["official"] += 1
+                elif guess in aur_packages:
+                    new_keys[key] = {"arch": [guess]}
+                    stats["aur"] += 1
+                else:
+                    pkgs = list(check_repology(key, rd_map[key]))
+                    if len(pkgs) > 0:
+                        new_keys[key] = {"arch": pkgs}
+                        stats["repology"] += 1
                     else:
-                        guess = key
+                        new_keys[key] = {"arch": []}
+                        stats["n/a"] += 1
 
-                    print("Looking for key {} ...".format(key))
-
-                    if guess in official_packages:
-                        missing_keys[key] = {"arch": [guess]}
-                        stats["official"] += 1
-                    elif guess in aur_packages:
-                        missing_keys[key] = {"arch": [guess]}
-                        stats["aur"] += 1
-                    else:
-                        pkgs = list(check_repology(key, rd_map[key]))
-                        if len(pkgs) > 0:
-                            missing_keys[key] = {"arch": pkgs}
-                            stats["repology"] += 1
-                        else:
-                            missing_keys[key] = {"arch": []}
-                            stats["n/a"] += 1
-
-    print("Stats: {} in official repositories, {} in AUR, {} found via repology, {} not found."
-          .format(stats["official"], stats["aur"], stats["repology"], stats["n/a"]))
-    with open('arch-with-aur.yaml', 'w') as out_file:
-        yaml.dump(missing_keys, out_file)
+    print("Stats: {} in official repositories, {} in AUR, {} found via "
+          "repology, {} skipped, {} not found."
+          .format(stats["official"], stats["aur"], stats["repology"],
+                  stats["skipped"], stats["n/a"]))
+    with open(ROSDEP_YAML_FILE, 'w') as out_file:
+        yaml.safe_dump(new_keys, out_file)
 
 
 if __name__ == '__main__':
