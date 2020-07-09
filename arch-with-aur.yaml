@@ -126,7 +126,8 @@ coinor-libcgl-dev:
   arch:
   - coin-or-cgl
 coinor-libclp-dev:
-  arch: []
+  arch:
+  - coin-or-clp
 coinor-libcoinutils-dev:
   arch:
   - coin-or-coinutils
@@ -185,6 +186,7 @@ docker-compose:
 docker.io:
   arch:
   - docker
+  - podman-docker
 dpath-pip:
   arch:
     pip:
@@ -216,7 +218,8 @@ espeak:
   arch:
   - espeak
 exfat-fuse:
-  arch: []
+  arch:
+  - exfat-utils
 exhale-pip:
   arch:
     pip:
@@ -255,16 +258,17 @@ gazebo9:
   - gazebo
 gcc-arm-none-eabi:
   arch:
-  - gcc-arm-none-eabi-bin
+  - arm-none-eabi-gcc
 gcc-multilib:
   arch:
   - gcc-multilib
 gcc-static:
-  arch: []
+  arch:
+  - gcc
+  - ghdl-gcc
 gdal-bin:
   arch:
   - gdal
-  - python-gdal
 geographiclib:
   arch:
   - geographiclib
@@ -303,7 +307,8 @@ graphviz-dev:
   arch:
   - graphviz
 gringo:
-  arch: []
+  arch:
+  - clasp
 gstreamer0.10-gconf:
   arch:
   - gst-plugin-gtk
@@ -369,7 +374,6 @@ ipython:
 ipython3:
   arch:
   - ipython
-  - ipython2
 jq:
   arch:
   - jq
@@ -485,7 +489,8 @@ libcap2:
   arch:
   - libcap
 libcereal-dev:
-  arch: []
+  arch:
+  - cereal
 libceres-dev:
   arch:
   - ceres-solver
@@ -493,7 +498,8 @@ libcoin80-dev:
   arch:
   - coin
 libconfig++-dev:
-  arch: []
+  arch:
+  - libconfig
 libconfig-dev:
   arch:
   - libconfig
@@ -525,8 +531,10 @@ libesd0-dev:
 libespeak-dev:
   arch:
   - espeak
+  - espeak-ng-espeak
 libestools-dev:
-  arch: []
+  arch:
+  - festival
 libffi-dev:
   arch:
   - libffi
@@ -542,7 +550,6 @@ libfreetype6-dev:
 libftdipp-dev:
   arch:
   - libftdi
-  - libftdi-compat
 libgazebo11-dev:
   arch: []
 libgazebo9-dev:
@@ -551,7 +558,6 @@ libgazebo9-dev:
 libgdal-dev:
   arch:
   - gdal
-  - python-gdal
 libgeographiclib-dev:
   arch: []
 libgif-dev:
@@ -654,6 +660,7 @@ libiw-dev:
 libjack-dev:
   arch:
   - jack
+  - jack2
 libjackson-json-java:
   arch: []
 libjansson-dev:
@@ -670,9 +677,6 @@ libkdtree++-dev:
   arch: []
 liblapacke-dev:
   arch:
-  - blas
-  - cblas
-  - lapack
   - lapacke
 liblinear-dev:
   arch:
@@ -686,9 +690,7 @@ liblzma-dev:
   - xz
 libmarble-dev:
   arch:
-  - marble
   - marble-common
-  - marble-qt
 libmicrohttpd:
   arch:
   - libmicrohttpd
@@ -738,7 +740,6 @@ libnotify:
   - libnotify
 libnss3-dev:
   arch:
-  - ca-certificates-mozilla
   - nss
 libopal-dev:
   arch: []
@@ -781,7 +782,8 @@ libphonon-dev:
   arch:
   - phonon-qt5
 libpng++-dev:
-  arch: []
+  arch:
+  - png++
 libpocofoundation9:
   arch: []
 libpqxx:
@@ -801,12 +803,6 @@ libpt-dev:
 libpulse-dev:
   arch:
   - libpulse
-  - pulseaudio
-  - pulseaudio-bluetooth
-  - pulseaudio-equalizer
-  - pulseaudio-jack
-  - pulseaudio-lirc
-  - pulseaudio-zeroconf
 libqcustomplot-dev:
   arch:
   - qcustomplot
@@ -1018,7 +1014,8 @@ libqt5-xml:
   - qt5-xcb-private-headers
   - qt5-xmlpatterns
 librabbitmq-dev:
-  arch: []
+  arch:
+  - librabbitmq-c
 libraw1394:
   arch:
   - libraw1394
@@ -1060,9 +1057,6 @@ libsvn-dev:
 libsystemd-dev:
   arch:
   - systemd
-  - systemd-libs
-  - systemd-resolvconf
-  - systemd-sysvcompat
 libtesseract:
   arch:
   - tesseract
@@ -1097,7 +1091,9 @@ libvpx-dev:
   - libvpx
 libvulkan-dev:
   arch:
-  - vulkan-icd-loader
+  - vulkan-headers
+  - vulkan-intel
+  - vulkan-validation-layers
 libwebp-dev:
   arch:
   - libwebp
@@ -1110,11 +1106,11 @@ libxcursor-dev:
 libxenomai-dev:
   arch: []
 libxft-dev:
-  arch: []
+  arch:
+  - libxft
 libxkbcommon-dev:
   arch:
   - libxkbcommon
-  - libxkbcommon-x11
 libxml2-utils:
   arch:
   - libxml2
@@ -1133,7 +1129,8 @@ lighttpd:
   arch:
   - lighttpd
 linphone:
-  arch: []
+  arch:
+  - mediastreamer
 mapnik-utils:
   arch:
   - mapnik
@@ -1150,7 +1147,8 @@ mercurial:
   arch:
   - mercurial
 mesa-utils:
-  arch: []
+  arch:
+  - mesa-demos
 mkdocs:
   arch:
   - mkdocs
@@ -1188,9 +1186,7 @@ netcdf:
   - netcdf
 network-manager:
   arch:
-  - libnm
   - networkmanager
-  - nm-cloud-setup
 nite-dev:
   arch: []
 nkf:
@@ -1218,7 +1214,7 @@ nvidia-cuda:
   - cuda
 nvidia-cuda-dev:
   arch:
-  - cuda
+  - physfs
 ocl-icd-opencl-dev:
   arch:
   - ocl-icd
@@ -1242,6 +1238,7 @@ opensplice:
   arch: []
 openssh-client:
   arch:
+  - dropbear-scp
   - openssh
 openssh-server:
   arch:
@@ -1283,8 +1280,6 @@ polyclipping-dev:
 poppler-utils:
   arch:
   - poppler
-  - poppler-glib
-  - poppler-qt5
 portaudio19-dev:
   arch:
   - portaudio
@@ -1350,7 +1345,6 @@ pyper-pip:
 pyqt5-dev-tools:
   arch:
   - python-pyqt5
-  - python2-pyqt5
 pyrebase-pip:
   arch:
     pip:
@@ -1378,7 +1372,8 @@ python-anyjson:
 python-apparmor:
   arch: []
 python-argcomplete:
-  arch: []
+  arch:
+  - python-argcomplete
 python-argh:
   arch: []
 python-astor-pip:
@@ -1472,7 +1467,8 @@ python-control-pip:
 python-cookiecutter:
   arch: []
 python-couchdb:
-  arch: []
+  arch:
+  - python-couchdb
 python-cpplint:
   arch: []
 python-crccheck-pip:
@@ -1492,7 +1488,9 @@ python-deepdiff-pip:
 python-defer-pip:
   arch: []
 python-dev:
-  arch: []
+  arch:
+  - python
+  - python2
 python-django:
   arch: []
 python-django-cors-headers:
@@ -1680,7 +1678,8 @@ python-inotify-simple-pip:
 python-inputs-pip:
   arch: []
 python-ipdb:
-  arch: []
+  arch:
+  - python-ipdb
 python-itsdangerous:
   arch: []
 python-jasmine-pip:
@@ -1704,7 +1703,8 @@ python-jsonschema:
 python-jsonschema-pip:
   arch: []
 python-jwt:
-  arch: []
+  arch:
+  - python-pyjwt
 python-kdtree:
   arch: []
 python-keras-pip:
@@ -1764,7 +1764,8 @@ python-mysqldb:
 python-namedlist-pip:
   arch: []
 python-netaddr:
-  arch: []
+  arch:
+  - python-netaddr
 python-networkmanager:
   arch: []
 python-ntplib:
@@ -1818,7 +1819,8 @@ python-pbr:
   arch:
   - python2-pbr
 python-pcapy:
-  arch: []
+  arch:
+  - python-pcapy
 python-pcg-gazebo-pip:
   arch: []
 python-pep8:
@@ -2118,7 +2120,8 @@ python-testtools:
 python-texttable:
   arch: []
 python-tftpy:
-  arch: []
+  arch:
+  - python-tftpy
 python-tilestache:
   arch: []
 python-tinydb-pip:
@@ -2188,7 +2191,8 @@ python-walrus-pip:
       packages:
       - python-walrus
 python-watchdog:
-  arch: []
+  arch:
+  - python-watchdog
 python-webob:
   arch:
   - python2-webob
@@ -2218,7 +2222,7 @@ python-wtforms:
   arch: []
 python-wxtools:
   arch:
-  - python2-wxpython3
+  - python-wxpython
 python-xdot:
   arch:
   - python2-xdot
@@ -2288,7 +2292,8 @@ python3-defusedxml:
   arch:
   - python-defusedxml
 python3-dev:
-  arch: []
+  arch:
+  - python
 python3-distutils:
   arch: []
 python3-django:
@@ -2987,7 +2992,8 @@ sphinxcontrib-bibtex-pip:
       packages:
       - sphinxcontrib-bibtex
 ssh-askpass:
-  arch: []
+  arch:
+  - x11-ssh-askpass
 ssh-askpass-gnome:
   arch:
   - openssh
@@ -3073,7 +3079,6 @@ vim:
 virtualenv:
   arch:
   - python-virtualenv
-  - python2-virtualenv
 vrep:
   arch: []
 wireless-tools:
@@ -3093,7 +3098,8 @@ x11proto-gl-dev:
   arch:
   - xorgproto
 x11proto-print-dev:
-  arch: []
+  arch:
+  - libxp
 xfont-server:
   arch: []
 xfonts-100dpi:

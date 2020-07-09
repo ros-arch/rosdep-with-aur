@@ -114,6 +114,73 @@ def list_pip_packages():
     return pkgs
 
 
+def fetch_ubuntu_package_files():
+    mirror = 'http://de.archive.ubuntu.com'
+    dist = 'bionic'
+    arch = 'amd64'
+
+    cache_filename = "ubuntu_{}_{}_packages_with_files".format(dist, arch)
+    cache = get_cached(cache_filename)
+    if cache is not None:
+        return cache
+
+    url = '{}/ubuntu/dists/{}/Contents-{}.gz'.format(mirror, dist, arch)
+    print("Loading ubuntu packages from {}".format(url))
+    with urllib.request.urlopen(url) as res:
+        file = gzip.GzipFile(fileobj=io.BytesIO(res.read()))
+
+    package_files = dict()
+    for line in file.readlines():
+        file, package = map(str.strip, line.decode('utf-8').rsplit(maxsplit=1))
+        package = package.rsplit('/', maxsplit=1)[-1]
+        if package not in package_files:
+            package_files[package] = set()
+        package_files[package].add(file)
+
+    print("Got {} packages from Ubuntu repositories.".format(len(package_files)))
+    store_cache(cache_filename, package_files)
+    return package_files
+
+
+def build_local_file_cache():
+    cache = get_cached('arch_files_packages')
+    if cache is not None:
+        return  cache
+
+    print("Building local file cache ...")
+    package_files = dict()
+    for repo in ['core', 'extra', 'community']:
+        filename = '/var/lib/pacman/sync/{}.files'.format(repo)
+        with tarfile.open(filename, mode='r:gz') as db:
+            for m in db.getmembers():
+                if not m.isdir():
+                    continue
+
+                desc = db.extractfile(db.getmember(m.name + "/desc"))
+                for raw_line in desc:
+                    line = raw_line.decode('utf-8').strip()
+                    if '%NAME%' in line:
+                        pkg_name = next(desc).decode('utf-8').strip()
+
+                files = db.extractfile(db.getmember(m.name + "/files"))
+                for raw_line in files:
+                    line = raw_line.decode('utf-8').strip()
+
+                    if '%FILES%' in line:
+                        continue
+                    if line.endswith('/'):
+                        continue
+
+                    if line in package_files:
+                        package_files[line].add(pkg_name)
+                    else:
+                        package_files[line] = {pkg_name}
+
+    print("Local file cache contains {} files.".format(len(package_files)))
+    store_cache('arch_files_packages', package_files)
+    return package_files
+
+
 def load_rosdep_file(filename):
     print("Loading rosdep definitions from {} ...".format(filename))
     if '://' in filename:
@@ -317,6 +384,29 @@ def main():
     pip_packages = list_pip_packages()
     print("{} PyPI packages loaded".format(len(pip_packages)))
 
+    ubuntu_files = fetch_ubuntu_package_files()
+    arch_files = build_local_file_cache()
+
+    def match_pkg_files(ubuntu_pkg_name):
+        try:
+            needed_files = ubuntu_files[ubuntu_pkg_name]
+        except KeyError:
+            return []
+
+        hits = dict()
+        for file in needed_files:
+            try:
+                arch_pkgs = arch_files[file]
+                for arch_pkg in arch_pkgs:
+                    if arch_pkg in hits:
+                        hits[arch_pkg] += 1
+                    else:
+                        hits[arch_pkg] = 1
+            except KeyError:
+                continue
+
+        return list(hits.keys())
+
     previous_defs = load_rosdep_file(ROSDEP_YAML_FILE)
 
     def do_all_pkgs_exist(pkgs):
@@ -329,6 +419,7 @@ def main():
         "official": 0,
         "aur": 0,
         "pip": 0,
+        "files": 0,
         "repology": 0,
         "skipped": 0,
         "n/a": 0
@@ -412,19 +503,32 @@ def main():
                     add_definition(key, [guess], pkg_manager='pip')
                     stats['pip'] += 1
                     continue
-            pkgs = list(check_repology(key, official_rosdep_defs[key]))
-            if len(pkgs) > 0:
-                add_definition(key, pkgs)
+
+            bionic_pkgs = rosdep_lookup(official_rosdep_defs, key,
+                                        os='ubuntu', os_version='bionic')
+            if len(bionic_pkgs) > 0:
+                arch_pkgs = set()
+                for p in bionic_pkgs:
+                    arch_pkgs.update(match_pkg_files(p))
+                if len(arch_pkgs) > 0:
+                    add_definition(key, arch_pkgs)
+                    stats["files"] += 1
+                    continue
+
+            repology_pkgs = list(check_repology(key, official_rosdep_defs[key]))
+            if len(repology_pkgs) > 0:
+                add_definition(key, repology_pkgs)
                 stats["repology"] += 1
                 continue
 
             add_definition(key, [])
             stats["n/a"] += 1
 
-    print("Stats: {} in official repositories, {} in AUR, {} on PyPI, "
-          "{} found via repology, {} skipped, {} not found."
+    print("Stats: {} in official repositories, {} in AUR, {} on PyPI, {} "
+          "matched files, {} found via repology, {} skipped, {} not found."
           .format(stats["official"], stats["aur"], stats["pip"],
-                  stats["repology"], stats["skipped"], stats["n/a"]))
+                  stats["files"], stats["repology"], stats["skipped"],
+                  stats["n/a"]))
     with open(ROSDEP_YAML_FILE, 'w') as out_file:
         yaml.safe_dump(new_keys, out_file)
 
