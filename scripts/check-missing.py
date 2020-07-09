@@ -24,6 +24,8 @@
 import gzip
 import io
 import json
+import os
+import pickle
 import tarfile
 import urllib.error
 import urllib.request
@@ -35,8 +37,32 @@ from lxml import etree
 ROSDEP_YAML_FILE = "arch-with-aur.yaml"
 
 
+def get_cached(name):
+    try:
+        # TODO: Drop cache if it is too old (> 1 day)
+        with open(os.path.join('cache', name + '.pickle'), mode='rb') as fstream:
+            return pickle.load(fstream)
+    except FileNotFoundError:
+        return None
+    except OSError:
+        return None
+    except pickle.PickleError:
+        return None
+
+
+def store_cache(name, obj):
+    if not os.path.exists('cache'):
+        os.makedirs('cache')
+    with open(os.path.join('cache', name + '.pickle'), mode='w+b') as fstream:
+        pickle.dump(obj, fstream)
+
+
 def list_official_packages():
-    pkgs = []
+    cache = get_cached('arch_packages')
+    if cache is not None:
+        return cache
+
+    pkgs = set()
     for repo in ['core', 'extra', 'community']:
         with tarfile.open('/var/lib/pacman/sync/{}.db'.format(repo),
                           mode='r:gz') as db:
@@ -47,30 +73,44 @@ def list_official_packages():
                         line = raw_line.decode('utf-8').strip()
                         if next_line_has_name:
                             if len(line) > 0:
-                                pkgs.append(line)
+                                pkgs.add(line)
                             else:
                                 next_line_has_name = False
                         elif '%NAME%' in line:
                             next_line_has_name = True
                         elif '%PROVIDES%' in line:
                             next_line_has_name = True
-    return set(pkgs)
+    store_cache('arch_packages', pkgs)
+    return pkgs
 
 
 def list_aur_packages():
+    cache = get_cached('aur_packages')
+    if cache is not None:
+        return cache
+
     with urllib.request.urlopen('https://aur.archlinux.org/packages.gz')\
             as res:
         stream = io.BytesIO(res.read())
         file = gzip.GzipFile(fileobj=stream)
-        return set([line.decode('utf-8').strip() for line in file.readlines()])
+        aur_pkgs = set([line.decode('utf-8').strip() for line in file.readlines()])
+
+    store_cache('aur_packages', aur_pkgs)
+    return aur_pkgs
 
 
 def list_pip_packages():
+    cache = get_cached('pip_packages')
+    if cache is not None:
+        return cache
+
     pkgs = set()
     with urllib.request.urlopen('https://pypi.org/simple/') as res:
         htmlroot = etree.fromstring(res.read())
         for child in htmlroot.findall('.//a'):
             pkgs.add(child.attrib['href'].split('/')[2])
+
+    store_cache('pip_packages', pkgs)
     return pkgs
 
 
