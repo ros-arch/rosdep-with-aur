@@ -27,6 +27,7 @@ import json
 import os
 import pickle
 import tarfile
+import time
 import urllib.error
 import urllib.request
 
@@ -39,8 +40,12 @@ ROSDEP_YAML_FILE = "arch-with-aur.yaml"
 
 def get_cached(name):
     try:
-        # TODO: Drop cache if it is too old (> 1 day)
-        with open(os.path.join('cache', name + '.pickle'), mode='rb') as fstream:
+        filename = os.path.join('cache', name + '.pickle')
+        age_secs = time.time() - os.path.getmtime(filename)
+        if age_secs > 3600 * 24:
+            # too old, consider it a cache miss
+            return None
+        with open(filename, mode='rb') as fstream:
             return pickle.load(fstream)
     except FileNotFoundError:
         return None
